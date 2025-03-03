@@ -128,32 +128,37 @@ const Timeline = () => {
   };
 
   return (
-    <div className="bg-coal-950 py-12">
-      <h2 className="text-3xl font-bold text-center text-coal-100 mb-8">
+    <div className="bg-gray-50 dark:bg-coal-950 py-12 transition-colors duration-300">
+      <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-coal-100 mb-8">
         My Journey
       </h2>
-      <VerticalTimeline animate={true}>
+      <VerticalTimeline animate={true} lineColor="currentColor">
         {events.map((event, index) => (
           <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element"
             date={event.date}
-            dateClassName="text-coal-300 md:text-lg !text-white"
-            contentStyle={{ background: '#1a1a1a', color: '#fff' }}
-            contentArrowStyle={{ borderRight: '7px solid #1a1a1a' }}
+            dateClassName="text-gray-600 dark:text-coal-300 md:text-lg"
+            contentStyle={{
+              background: 'var(--timeline-background)',
+              color: 'var(--timeline-text)',
+            }}
+            contentArrowStyle={{
+              borderRight: '7px solid var(--timeline-background)',
+            }}
             iconStyle={getIconStyle(event.type)}
             icon={getIcon(event.type)}
             visible={true}
           >
-            <h3 className="!text-white vertical-timeline-element-title font-bold text-xl mb-1">
+            <h3 className="text-gray-900 dark:text-white vertical-timeline-element-title font-bold text-xl mb-1">
               {event.title}
             </h3>
             {event.location && (
-              <h4 className="!text-gray-400 vertical-timeline-element-subtitle mb-2">
+              <h4 className="text-gray-600 dark:text-gray-400 vertical-timeline-element-subtitle mb-2">
                 {event.location}
               </h4>
             )}
-            <div className="!text-gray-300">
+            <div className="text-gray-700 dark:text-gray-300">
               {Array.isArray(event.description) ? (
                 <ul className="list-disc list-inside space-y-1">
                   {event.description.map((item, i) => (

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+}
+
 :root {
   --color-coal-950: #121212;
   --color-coal-900: #1a1a1a;
@@ -22,8 +34,7 @@
 }
 
 body {
-  background-color: var(--color-coal-950);
-  color: var(--color-coal-100);
+  @apply bg-gray-100 dark:bg-coal-950 text-gray-900 dark:text-coal-100;
   @apply antialiased;
 }
 
@@ -71,15 +82,16 @@ input[type='number'] {
 .MenubarContent,
 .MenubarSubContent {
   min-width: 220px;
-  background-color: rgba(26, 26, 26, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+  @apply dark:bg-coal-900/80;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 6px;
   padding: 5px;
-  border: 1px solid var(--coal-800);
+  @apply border border-gray-200 dark:border-coal-800;
   box-shadow:
-    0 10px 38px -10px rgba(0, 0, 0, 0.45),
-    0 10px 20px -15px rgba(0, 0, 0, 0.3);
+    0 10px 38px -10px rgba(0, 0, 0, 0.15),
+    0 10px 20px -15px rgba(0, 0, 0, 0.1);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
@@ -89,7 +101,7 @@ input[type='number'] {
   all: unset;
   font-size: 14px;
   line-height: 1;
-  color: var(--coal-300);
+  @apply text-gray-700 dark:text-coal-300;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -101,13 +113,24 @@ input[type='number'] {
 }
 
 .MenubarItem:hover {
-  color: var(--coal-100);
-  background-color: rgba(38, 38, 38, 0.8);
+  @apply text-gray-900 dark:text-coal-100;
+  @apply bg-gray-100/80 dark:bg-coal-800/80;
   cursor: pointer;
 }
 
 .MenubarSeparator {
   height: 1px;
-  background-color: var(--coal-800);
+  @apply bg-gray-200 dark:bg-coal-800;
   margin: 5px;
+}
+
+/* Add Timeline specific styles */
+.vertical-timeline-custom {
+  --timeline-background: theme('colors.white');
+  --timeline-text: theme('colors.gray.900');
+}
+
+.dark .vertical-timeline-custom {
+  --timeline-background: theme('colors.coal.900');
+  --timeline-text: theme('colors.gray.100');
 }

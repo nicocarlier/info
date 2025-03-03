@@ -104,28 +104,25 @@ export default function Home() {
         <div className="space-y-12">
           <article className="space-y-4 flex flex-col">
             <header className="space-y-1">
-              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display text-coal-100">
-                <span aria-hidden="true">🧬</span>
-                <Link href="/life" className="hover:underline">
-                  Life
-                </Link>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-coal-100">
+                Life
               </h2>
               <p className="text-coal-400">
                 Tracking my life data in real time
               </p>
             </header>
-            <div className="p-4 bg-coal-800/50 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4">
-              {/* Add your life data sections here */}
+            <div className="p-4 bg-gray-200 dark:bg-coal-800/50 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4">
               <div className="flex space-x-3">
                 <span aria-hidden="true">🎂</span>
                 <div>
-                  <p className="text-coal-100">24 years old</p>
-                  <p className="text-sm text-coal-300">
+                  <p className="text-gray-900 dark:text-coal-100">
+                    24 years old
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-coal-300">
                     Next birthday in 3 months
                   </p>
                 </div>
               </div>
-              {/* Add more life data sections as needed */}
             </div>
           </article>
 

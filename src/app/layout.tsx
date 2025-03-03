@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import './globals.css';
 import 'react-vertical-timeline-component/style.min.css';
 import Navbar from './components/Navbar';
+import { ThemeProvider } from './context/ThemeContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,11 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-screen bg-coal-950">
-        <Navbar />
-        <div className="flex-grow">{children}</div>
-        <Footer />
+    <html lang="en" className="dark">
+      <body className="min-h-screen bg-gray-100 dark:bg-coal-950 text-gray-900 dark:text-coal-100 transition-colors duration-300">
+        <ThemeProvider>
+          <Navbar />
+          <div className="flex-grow">{children}</div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
