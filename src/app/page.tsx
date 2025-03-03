@@ -4,9 +4,9 @@ import Timeline from './components/Timeline';
 
 export default function Home() {
   return (
-    <main className="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
+    <main className="max-w-screen-md px-4 mx-auto space-y-16 md:px-0 pt-8">
       <section className="grid-cols-2 gap-16 sm:grid">
-        <div className="items-start justify-center mb-6 mt-7 sm:flex">
+        <div className="items-start justify-center sm:flex">
           <figure>
             <Image
               priority

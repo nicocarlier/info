@@ -46,3 +46,68 @@ body {
 input[type='number'] {
   @apply border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent;
 }
+
+/* Add these Menubar styles */
+.MenubarRoot {
+  display: flex;
+  background-color: var(--coal-900);
+  padding: 0;
+  font-family: var(--font-display);
+}
+
+.MenubarTrigger {
+  padding: 8px 12px;
+  outline: none;
+  user-select: none;
+  font-weight: 500;
+  color: var(--coal-300);
+  transition: color 0.2s ease;
+}
+
+.MenubarTrigger:hover {
+  color: var(--coal-100);
+}
+
+.MenubarContent,
+.MenubarSubContent {
+  min-width: 220px;
+  background-color: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 6px;
+  padding: 5px;
+  border: 1px solid var(--coal-800);
+  box-shadow:
+    0 10px 38px -10px rgba(0, 0, 0, 0.45),
+    0 10px 20px -15px rgba(0, 0, 0, 0.3);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.MenubarItem {
+  all: unset;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--coal-300);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 10px;
+  position: relative;
+  user-select: none;
+  outline: none;
+}
+
+.MenubarItem:hover {
+  color: var(--coal-100);
+  background-color: rgba(38, 38, 38, 0.8);
+  cursor: pointer;
+}
+
+.MenubarSeparator {
+  height: 1px;
+  background-color: var(--coal-800);
+  margin: 5px;
+}
