@@ -5,5 +5,5 @@ export default function Footer() {
         <p>&copy; 2024 nicocarlier.com</p>
       </div>
     </footer>
-  )
+  );
 }

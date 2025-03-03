@@ -88,3 +88,21 @@ This website is deployed on [Vercel](https://vercel.com/), the platform created 
 ## 📄 License
 
 © Nico Carlier
+
+## Development
+
+### Code Formatting and Linting
+
+This project uses Prettier for code formatting and ESLint for linting. There are two main commands you can use:
+
+- `npm run format`: Formats all files in the project using Prettier
+
+  - Use this when you want to format all files in the project at once
+  - This will apply consistent code style to all JavaScript, TypeScript, CSS, and JSON files
+
+- `npx lint-staged`: Runs formatting and linting only on staged files
+  - This command is automatically run before each commit through a pre-commit hook
+  - It ensures that all committed code follows the project's formatting and linting rules
+  - You can also run it manually to check your staged changes before committing
+
+The pre-commit hook will automatically run `lint-staged` when you attempt to make a commit, ensuring that all committed code is properly formatted and linted.

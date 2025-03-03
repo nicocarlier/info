@@ -1,26 +1,27 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Footer from './components/Footer'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Footer from './components/Footer';
+import './globals.css';
+import 'react-vertical-timeline-component/style.min.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'DadstoDaddies - Empowering Fathers to Get Fit',
-  description: 'A supportive community for dads on their fitness journey',
-}
+  title: 'Nico Carlier',
+  description: 'Full stack software engineer',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.className} bg-gray-50 text-gray-900 min-h-full flex flex-col`}>
+      <body className="min-h-screen bg-coal-950">
         <div className="flex-grow">{children}</div>
         <Footer />
       </body>
     </html>
-  )
+  );
 }
