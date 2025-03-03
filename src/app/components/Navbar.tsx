@@ -25,6 +25,17 @@ const Navbar = () => {
   //     }
   //   }, [darkMode]);
 
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/projects/fairbnb', label: 'Fairbnb' },
+    { href: 'https://github.com/nicocarlier', label: 'GitHub' },
+    {
+      href: 'https://www.linkedin.com/in/nicholas-carlier/',
+      label: 'LinkedIn',
+    },
+  ];
+
   return (
     <Menubar.Root className="MenubarRoot flex justify-center border-b border-gray-200 dark:border-coal-800 bg-white/50 dark:bg-coal-900/50 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-screen-md w-full px-4 md:px-0">

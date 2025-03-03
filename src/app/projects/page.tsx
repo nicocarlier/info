@@ -2,6 +2,21 @@ import Link from 'next/link';
 
 const projects = [
   {
+    name: 'Fairbnb',
+    slug: 'fairbnb',
+    description:
+      'A full-stack Airbnb clone built with React, Redux, and Ruby on Rails, featuring real-time booking and interactive maps.',
+    tags: [
+      'React',
+      'Redux',
+      'Ruby on Rails',
+      'PostgreSQL',
+      'AWS S3',
+      'Google Maps API',
+    ],
+    thumbnail: '🏠',
+  },
+  {
     name: 'Project A',
     slug: 'project-a',
     description:
