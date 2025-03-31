@@ -1,15 +1,14 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import ProjectLink from '@/components/ProjectLink';
 
 export default function RepsNRecipesProject() {
   return (
-    <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0 pt-8">
+    <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
       {/* Hero Section */}
       <section className="space-y-6">
         <h1>Reps 'N Recipes</h1>
-        <p className="text-xl text-coal-300">
+        <p className="text-xl dark:text-coal-300 text-coal-700">
           A comprehensive fitness application that combines workout tracking and
           nutrition management, helping users achieve their health and wellness
           goals all in one place.
@@ -59,14 +58,14 @@ export default function RepsNRecipesProject() {
       {/* Project Overview */}
       <section className="space-y-4">
         <h2>Project Overview</h2>
-        <p className="text-coal-300">
+        <p className="dark:text-coal-300 text-coal-700">
           Reps 'N Recipes is a fitness app designed to help users achieve their
           health and wellness goals. While many fitness apps focus on either
           workout tracking or nutrition management, Reps 'N Recipes combines
           both features into one seamless application, eliminating the need for
           multiple apps.
         </p>
-        <p className="text-coal-300">
+        <p className="dark:text-coal-300 text-coal-700">
           The app features a database of built-in exercises with GIFs for proper
           form guidance, allows manual exercise input, and generates workouts
           for beginners. Additionally, it leverages the Spoonacular API for
@@ -81,8 +80,10 @@ export default function RepsNRecipesProject() {
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">MERN Stack</h3>
-            <p className="text-coal-300">
+            <h3 className="text-xl font-semibold dark:text-coal-200 text-coal-800">
+              MERN Stack
+            </h3>
+            <p className="dark:text-coal-300 text-coal-700">
               Built with MongoDB, Express.js, React.js, and Node.js, creating a
               robust and scalable application architecture with a flexible NoSQL
               database.
@@ -90,10 +91,10 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold dark:text-coal-200 text-coal-800">
               State Management
             </h3>
-            <p className="text-coal-300">
+            <p className="dark:text-coal-300 text-coal-700">
               Redux for centralized state management, particularly valuable for
               handling complex application state across workout and nutrition
               tracking features.
@@ -101,10 +102,10 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold dark:text-coal-200 text-coal-800">
               Data Visualization
             </h3>
-            <p className="text-coal-300">
+            <p className="dark:text-coal-300 text-coal-700">
               Chart.js integrated with React to create interactive
               visualizations of user nutrition data, caloric intake, macros,
               weight tracking, and exercise progression over time.
@@ -112,10 +113,10 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold dark:text-coal-200 text-coal-800">
               External APIs
             </h3>
-            <p className="text-coal-300">
+            <p className="dark:text-coal-300 text-coal-700">
               Spoonacular API for comprehensive food and nutrition data,
               including ingredients, products, recipes, menu items, and meal
               plan generation capabilities.
@@ -123,10 +124,10 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold dark:text-coal-200 text-coal-800">
               Cloud Storage
             </h3>
-            <p className="text-coal-300">
+            <p className="dark:text-coal-300 text-coal-700">
               Amazon Web Services (AWS) S3 for scalable and secure storage of
               exercise demonstration GIFs, enhancing the user experience with
               visual guidance.
@@ -139,11 +140,11 @@ export default function RepsNRecipesProject() {
       <section className="space-y-4">
         <h2>Key Features</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="bg-coal-800/50 p-4 rounded-md">
-            <h3 className="font-semibold text-coal-100 mb-2">
+          <div className="dark:bg-coal-800/50 bg-coal-100/50 p-4 rounded-md">
+            <h3 className="font-semibold dark:text-coal-100 text-coal-900 mb-2">
               User Profile & Customization
             </h3>
-            <ul className="space-y-2 text-coal-300 text-sm">
+            <ul className="space-y-2 dark:text-coal-300 text-coal-700 text-sm">
               <li>
                 • Personalized onboarding survey for physical measurements
               </li>
@@ -153,11 +154,11 @@ export default function RepsNRecipesProject() {
             </ul>
           </div>
 
-          <div className="bg-coal-800/50 p-4 rounded-md">
-            <h3 className="font-semibold text-coal-100 mb-2">
+          <div className="dark:bg-coal-800/50 bg-coal-100/50 p-4 rounded-md">
+            <h3 className="font-semibold dark:text-coal-100 text-coal-900 mb-2">
               Workout Tracking
             </h3>
-            <ul className="space-y-2 text-coal-300 text-sm">
+            <ul className="space-y-2 dark:text-coal-300 text-coal-700 text-sm">
               <li>• Pre-defined workout programs for beginners</li>
               <li>• Custom workout creation with exercise library</li>
               <li>• Exercise GIFs for proper form guidance</li>
@@ -165,11 +166,11 @@ export default function RepsNRecipesProject() {
             </ul>
           </div>
 
-          <div className="bg-coal-800/50 p-4 rounded-md">
-            <h3 className="font-semibold text-coal-100 mb-2">
+          <div className="dark:bg-coal-800/50 bg-coal-100/50 p-4 rounded-md">
+            <h3 className="font-semibold dark:text-coal-100 text-coal-900 mb-2">
               Nutrition Tracking
             </h3>
-            <ul className="space-y-2 text-coal-300 text-sm">
+            <ul className="space-y-2 dark:text-coal-300 text-coal-700 text-sm">
               <li>• Comprehensive food database via Spoonacular</li>
               <li>• Meal logging with portion adjustments</li>
               <li>• Daily macronutrient and calorie tracking</li>
@@ -177,9 +178,11 @@ export default function RepsNRecipesProject() {
             </ul>
           </div>
 
-          <div className="bg-coal-800/50 p-4 rounded-md">
-            <h3 className="font-semibold text-coal-100 mb-2">Data Analysis</h3>
-            <ul className="space-y-2 text-coal-300 text-sm">
+          <div className="dark:bg-coal-800/50 bg-coal-100/50 p-4 rounded-md">
+            <h3 className="font-semibold dark:text-coal-100 text-coal-900 mb-2">
+              Data Analysis
+            </h3>
+            <ul className="space-y-2 dark:text-coal-300 text-coal-700 text-sm">
               <li>• Visual progress charts for key metrics</li>
               <li>• Weight tracking over time</li>
               <li>• Estimated 1-rep max calculations</li>
@@ -261,10 +264,10 @@ export default function RepsNRecipesProject() {
         <h2>Technical Implementation</h2>
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold dark:text-coal-200 text-coal-800">
               1-Rep Max Calculator
             </h3>
-            <p className="text-coal-300">
+            <p className="dark:text-coal-300 text-coal-700">
               A selector function that extracts all workouts containing a
               specific exercise, calculates the estimated one-rep max for each
               workout, and keeps the highest value per day:
@@ -302,10 +305,10 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold dark:text-coal-200 text-coal-800">
               Workout Session Persistence
             </h3>
-            <p className="text-coal-300">
+            <p className="dark:text-coal-300 text-coal-700">
               Implementation of session persistence to handle page refreshes
               during active workouts:
             </p>
@@ -331,7 +334,7 @@ export default function RepsNRecipesProject() {
       </section>
 
       {/* Collaborators */}
-      <section className="space-y-4">
+      {/* <section className="space-y-4">
         <h2>Collaborators</h2>
         <div className="flex flex-wrap gap-4">
           <Link
@@ -382,7 +385,7 @@ export default function RepsNRecipesProject() {
             </svg>
           </Link>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

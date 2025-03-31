@@ -5,13 +5,21 @@ import Link from 'next/link';
 import * as Menubar from '@radix-ui/react-menubar';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../app/context/ThemeContext';
+import { NAV_PROJECTS } from '@/constants/projects.conts';
 
-const PROJECTS = [
-  { name: '🏠  Fairbnb (Airbnb clone)', slug: 'fairbnb' },
-  { name: '♟️  Chess App', slug: 'chess-app' },
-  { name: "💪  Reps 'N Recipes", slug: 'reps-n-recipes' },
-  { name: '🛠️  Mini Projects', slug: 'mini-projects' },
-];
+// const PROJECTS = [
+//   { name: '🏠  Fairbnb (Airbnb clone)', slug: 'fairbnb' },
+//   {
+//     name: <span className="inline-flex items-center">
+//       <span className="dark:hidden">♟️</span>
+//       <span className="hidden dark:inline text-white">♞♟️</span>
+//       <span className="ml-1">Chess App</span>
+//     </span>,
+//     slug: 'chess-app'
+//   },
+//   { name: "💪  Reps 'N Recipes", slug: 'reps-n-recipes' },
+//   { name: '🛠️  Mini Projects', slug: 'mini-projects' },
+// ];
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode, isLoaded } = useTheme();
@@ -40,7 +48,7 @@ const Navbar = () => {
                 sideOffset={5}
                 alignOffset={-3}
               >
-                {PROJECTS.map((project) => (
+                {NAV_PROJECTS.map((project) => (
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}

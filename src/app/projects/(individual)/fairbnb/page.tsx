@@ -13,12 +13,10 @@ export default function FairbnbProject() {
   ];
 
   return (
-    <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0 pt-8">
+    <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0 ">
       {/* Hero Section */}
       <section className="space-y-6">
-        <h1 className="text-4xl font-semibold font-display text-coal-100 dark:text-white">
-          Fairbnb
-        </h1>
+        <h1>Fairbnb</h1>
         <p className="text-xl text-coal-300 dark:text-gray-300">
           A comprehensive full-stack Airbnb clone built with React/Redux
           frontend and Ruby on Rails backend, featuring Google Maps integration
@@ -31,6 +29,7 @@ export default function FairbnbProject() {
             href="https://fairbnb-36c07c3f3067.herokuapp.com/"
             variant="primary"
             target="_blank"
+            isDisabled={true}
           >
             Live Demo
           </ProjectLink>
@@ -81,9 +80,7 @@ export default function FairbnbProject() {
 
       {/* Project Overview */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
-          Project Overview
-        </h2>
+        <h2>Project Overview</h2>
         <p className="text-coal-300 dark:text-gray-300">
           Fairbnb is a full-stack web application that meticulously emulates the
           Airbnb experience, allowing users to discover, explore, and book
@@ -102,9 +99,7 @@ export default function FairbnbProject() {
 
       {/* Technology Stack */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
-          Technology Stack & Rationale
-        </h2>
+        <h2>Technology Stack & Rationale</h2>
 
         <div className="space-y-6">
           <div className="space-y-2">
@@ -162,9 +157,7 @@ export default function FairbnbProject() {
 
       {/* Key Features */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
-          Key Features
-        </h2>
+        <h2>Key Features</h2>
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
@@ -296,9 +289,7 @@ export default function FairbnbProject() {
 
       {/* Technical Challenges */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
-          Technical Challenges & Solutions
-        </h2>
+        <h2>Technical Challenges & Solutions</h2>
 
         <div className="bg-coal-800/30 dark:bg-gray-800/30 p-6 rounded-lg space-y-4">
           <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
@@ -358,9 +349,7 @@ export const UTCDateBooking = (booking) => {
 
       {/* Feature Showcase */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
-          Feature Showcase
-        </h2>
+        <h2>Feature Showcase</h2>
 
         <div className="space-y-8">
           <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
@@ -429,9 +418,7 @@ export const UTCDateBooking = (booking) => {
 
       {/* Development Insights */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
-          Development Insights
-        </h2>
+        <h2>Development Insights</h2>
         <div className="prose prose-sm max-w-none text-coal-300 dark:text-gray-300">
           <p>
             Building Fairbnb provided valuable experience in full-stack

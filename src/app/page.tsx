@@ -138,17 +138,32 @@ export default function About() {
               </h2>
               <p className="opacity-60">My current and favorite work pieces</p>
             </header>
-            <div className="grid grid-cols-4 gap-4 text-xs text-center">
+            <div className="space-y-3">
               {HIGH_LEVEL_PROJECTS.map((project) => (
-                <div key={project.slug} className="space-y-3 opacity-80">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="bg-gray-100 dark:bg-coal-800/50 rounded-2xl shadow backdrop-blur-sm aspect-square flex items-center justify-center text-2xl hover:scale-105 transition-transform"
-                  >
+                <Link
+                  key={project.slug}
+                  href={`/projects/${project.slug}`}
+                  className="group flex items-center gap-4 p-3 bg-gray-100 dark:bg-coal-800/50 rounded-xl shadow backdrop-blur-sm hover:scale-[1.02] transition-transform"
+                >
+                  <span className="text-2xl" aria-hidden="true">
                     {project.thumbnail}
-                  </Link>
-                  <div>{project.name}</div>
-                </div>
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-medium text-coal-800 dark:text-coal-100">
+                        {project.name}
+                      </h3>
+                      {project.slug === 'chess-app' && (
+                        <span className="px-2 py-0.5 bg-blue-600 text-xs text-white rounded-full font-medium">
+                          In Progress
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm text-coal-600 dark:text-coal-300 line-clamp-1">
+                      {project.description}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </div>
           </article>
@@ -211,15 +226,14 @@ export default function About() {
             <header className="space-y-1">
               <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">📚</span>
-                <Link href="/books" className="hover:underline">
-                  Books I've Enjoyed
-                </Link>
+                <div>Books I Enjoyed</div>
               </h2>
               <p className="opacity-60">
                 A collection of books that have influenced my thinking
               </p>
             </header>
 
+            {/* Favorite Books */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {FAVORITE_BOOKS.map((book) => (
                 <div
@@ -247,7 +261,8 @@ export default function About() {
               ))}
             </div>
 
-            <div className="mt-8 space-y-4">
+            {/* Currently Reading */}
+            {/* <div className="mt-8 space-y-4">
               <header className="space-y-1">
                 <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
                   <span aria-hidden="true">⏳</span>
@@ -274,7 +289,7 @@ export default function About() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </article>
         </div>
       </section>
