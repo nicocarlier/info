@@ -21,9 +21,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: List repository content
-        run: ls -la
-      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,22 +30,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Show Next.js config
-        run: cat next.config.mjs || cat next.config.js
-      
       - name: Build
         run: npm run build
-      
-      - name: List output directory
-        run: ls -la out/
       
       - name: Create .nojekyll file
         run: touch out/.nojekyll
       
-      - name: Upload pages artifact
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: out
+          name: github-pages
 
   deploy:
     environment:
@@ -60,3 +52,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          artifact_name: github-pages
