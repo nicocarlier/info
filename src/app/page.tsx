@@ -54,7 +54,7 @@ export default function About() {
           </p>
           <p className="opacity-60">
             Outside of work, I hike Bay Area trails, play tennis and rugby, and
-            read books on technology and philosophy.
+            read books on tech and science, or sci-fi novels.
           </p>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function About() {
                 Annual focus that shapes my projects and decisions
               </p>
             </header>
-            <div className="relative space-y-4 bg-gray-100 dark:bg-coal-800/50 rounded shadow-sm backdrop-blur-sm">
+            <div className="relative space-y-4 rounded shadow-sm backdrop-blur-sm">
               <div>
                 <p className="text-2xl">Deep Expertise</p>
                 <p className="overflow-hidden text-sm opacity-80">
@@ -163,7 +163,7 @@ export default function About() {
               </h2>
               <p className="opacity-60">Tracking my life data in real time</p>
             </header>
-            <div className="p-4 bg-gray-100 dark:bg-coal-800/50 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4">
+            <div className="p-4 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4">
               {/* Age */}
               <LiveAgeTracker />
 

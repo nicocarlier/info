@@ -1,25 +1,36 @@
-import ProjectLink from '@/components/ProjectLink';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
+import ProjectLink from '@/components/ProjectLink';
 
 export default function FairbnbProject() {
+  const [activeImage, setActiveImage] = useState(0);
+  const images = [
+    '/projects/fairbnb/fairbnb-square.webp',
+    '/projects/fairbnb-map.webp',
+    '/projects/fairbnb-booking.webp',
+  ];
+
   return (
     <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0 pt-8">
       {/* Hero Section */}
       <section className="space-y-6">
-        <h1>Fairbnb</h1>
-        <p className="text-xl text-coal-300">
+        <h1 className="text-4xl font-semibold font-display text-coal-100 dark:text-white">
+          Fairbnb
+        </h1>
+        <p className="text-xl text-coal-300 dark:text-gray-300">
           A comprehensive full-stack Airbnb clone built with React/Redux
           frontend and Ruby on Rails backend, featuring Google Maps integration
           and AWS S3 for media storage.
         </p>
 
-        {/* Project Links */}
+        {/* Project ProjectLinks */}
         <div className="flex space-x-4">
           <ProjectLink
             href="https://fairbnb-36c07c3f3067.herokuapp.com/"
             variant="primary"
             target="_blank"
-            isDisabled={true}
           >
             Live Demo
           </ProjectLink>
@@ -32,105 +43,290 @@ export default function FairbnbProject() {
           </ProjectLink>
         </div>
 
-        {/* Main Project Image */}
-        <div className="relative w-full h-[500px] rounded-lg overflow-hidden bg-coal-800">
-          <Image
-            priority
-            alt="fairbnb dashboard"
-            src="/projects/fairbnb.webp"
-            className="object-contain"
-            fill
-            sizes="(max-width: 768px) 100vw, 768px"
-            quality={95}
+        {/* Main Project Image with Slider */}
+        <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-coal-800 dark:bg-gray-800">
+          <div
+            className="absolute inset-0 bg-cover bg-center blur-xl opacity-30 scale-110"
+            style={{ backgroundImage: `url(${images[activeImage]})` }}
           />
+          <div className="relative h-full flex items-center justify-center">
+            <Image
+              priority
+              alt="Fairbnb dashboard"
+              src={images[activeImage]}
+              className="object-contain max-h-full"
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              quality={95}
+            />
+          </div>
+
+          {/* Image Navigation */}
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full ${
+                  activeImage === index
+                    ? 'bg-blue-600'
+                    : 'bg-gray-400 hover:bg-gray-300'
+                }`}
+                onClick={() => setActiveImage(index)}
+                aria-label={`View image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Project Overview */}
       <section className="space-y-4">
-        <h2>Project Overview</h2>
-        {/* ... */}
+        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
+          Project Overview
+        </h2>
+        <p className="text-coal-300 dark:text-gray-300">
+          Fairbnb is a full-stack web application that meticulously emulates the
+          Airbnb experience, allowing users to discover, explore, and book
+          accommodations with ease. The platform combines a responsive
+          React/Redux frontend with a Ruby on Rails backend to deliver a
+          seamless and intuitive user experience.
+        </p>
+        <p className="text-coal-300 dark:text-gray-300">
+          I prioritized data integrity and user experience by implementing
+          robust encapsulation principles, ensuring that users can only review
+          properties they've stayed at, preventing post-experience booking
+          modifications, and enforcing homeowner-defined constraints for all
+          reservations.
+        </p>
       </section>
 
       {/* Technology Stack */}
       <section className="space-y-6">
-        <h2>Technology Stack</h2>
+        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
+          Technology Stack & Rationale
+        </h2>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">Backend</h3>
-            <p className="text-coal-300">
+            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+              Backend
+            </h3>
+            <p className="text-coal-300 dark:text-gray-300">
               Built with Ruby on Rails for its convention-over-configuration
               paradigm, accelerating development and providing excellent
-              scalability for growing user bases.
+              scalability for growing user bases. Rails' robust structure is
+              particularly well-suited for platforms like Fairbnb that
+              anticipate expanding data needs.
             </p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">Database</h3>
-            <p className="text-coal-300">
+            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+              Database
+            </h3>
+            <p className="text-coal-300 dark:text-gray-300">
               PostgreSQL database with Active Record ORM, ensuring data
               integrity and enabling complex operations through object-oriented
-              database interactions.
+              database interactions. This pairing excels at maintaining critical
+              relational data like user profiles, property listings, and booking
+              records.
             </p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">Frontend</h3>
-            <p className="text-coal-300">
+            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+              Frontend
+            </h3>
+            <p className="text-coal-300 dark:text-gray-300">
               React.js with Redux for state management, creating a dynamic and
               modular UI with predictable state updates and reusable components.
+              This architecture promotes code reusability and efficient
+              rendering, essential for the interactive features that define the
+              Fairbnb experience.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+              APIs & Libraries
+            </h3>
+            <p className="text-coal-300 dark:text-gray-300">
+              Integrated Google Maps API for interactive location visualization,
+              Date Range Picker for intuitive booking calendar functionality,
+              and AWS S3 for optimized media storage and delivery, enhancing
+              performance without compromising on functionality.
             </p>
           </div>
         </div>
       </section>
 
       {/* Key Features */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold font-display text-coal-100">
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
           Key Features
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="bg-coal-800/50 p-4 rounded-md">
-            <h3 className="font-semibold text-coal-100 mb-2">
+        <div className="grid gap-6 sm:grid-cols-2">
+          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
               User Authentication
             </h3>
-            <ul className="space-y-2 text-coal-300 text-sm">
-              <li>• Secure account management with CSRF protection</li>
-              <li>• Intelligent email routing for signup/login</li>
-              <li>• Password strength validation</li>
-              <li>• Demo user access available</li>
+            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Secure account management with CSRF protection and encrypted
+                  passwords
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Intelligent email routing for streamlined signup/login flow
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Comprehensive password strength validation with real-time
+                  feedback
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Demo user access for quick platform exploration</span>
+              </li>
             </ul>
           </div>
 
-          <div className="bg-coal-800/50 p-4 rounded-md">
-            <h3 className="font-semibold text-coal-100 mb-2">Booking System</h3>
-            <ul className="space-y-2 text-coal-300 text-sm">
-              <li>• Interactive booking calendar</li>
-              <li>• Real-time availability updates</li>
-              <li>• Booking management interface</li>
-              <li>• Date validation and conflict prevention</li>
+          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
+              Property Discovery
+            </h3>
+            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Interactive map integration with Google Maps API</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Keyword search functionality for targeting specific amenities
+                  or locations
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Immersive photo slideshows for comprehensive property previews
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Expandable property descriptions and user reviews</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
+              Booking System
+            </h3>
+            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Interactive booking calendar with Date Range Picker
+                  integration
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Real-time availability updates and conflict prevention
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Dynamic pricing calculations based on duration and property
+                  rates
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Comprehensive booking management interface for users
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
+              Review System
+            </h3>
+            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Post-stay review creation with data integrity validation
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Encapsulated review system allowing only verified guests to
+                  leave reviews
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Rating system with detailed feedback categories</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>
+                  Property listing review display with expandable details
+                </span>
+              </li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Code Highlights */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold font-display text-coal-100">
-          Technical Implementation
+      {/* Technical Challenges */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
+          Technical Challenges & Solutions
         </h2>
-        <div className="space-y-6">
+
+        <div className="bg-coal-800/30 dark:bg-gray-800/30 p-6 rounded-lg space-y-4">
+          <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            Date Handling Across Time Zones
+          </h3>
+          <p className="text-coal-300 dark:text-gray-300">
+            When handling booking dates between the frontend and backend,
+            timezone inconsistencies created significant challenges. Dates saved
+            in the database as{' '}
+            <code className="bg-coal-700/50 dark:bg-gray-700/50 px-1.5 py-0.5 rounded text-xs">
+              yyyy-mm-dd
+            </code>{' '}
+            strings would lose timezone data, causing potential date shifts when
+            displayed in the user's browser.
+          </p>
+
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200">
-              Date Handling Solution
-            </h3>
-            <p className="text-coal-300">
-              Implemented robust date handling to ensure consistency across
-              timezones:
+            <h4 className="font-medium text-coal-200 dark:text-gray-200">
+              Solution: UTC Standardization
+            </h4>
+            <p className="text-coal-300 dark:text-gray-300">
+              I implemented a bidirectional conversion system that standardizes
+              all dates to UTC before storage and converts them back to the
+              user's local timezone upon retrieval:
             </p>
-            <div className="bg-coal-800 p-4 rounded-md">
-              <pre className="text-sm text-coal-300 overflow-x-auto">
+
+            <div className="bg-coal-800 dark:bg-gray-900 p-4 rounded-md">
+              <pre className="text-sm text-coal-300 dark:text-gray-300 overflow-x-auto">
                 {`export const convertLocalDateToUTC = (inputDate) => {
     const parts = inputDate.split("/");
     const day = parseInt(parts[1], 10);
@@ -140,28 +336,131 @@ export default function FairbnbProject() {
     const localDate = DateTime.fromObject({ day, month, year }).setZone(timeZone);
     const utcDate = localDate.toUTC();
     return utcDate.toFormat('dd/MM/yyyy');
+}
+
+export const UTCDateBooking = (booking) => {
+    return {...booking, 
+        startDate: convertLocalDateToUTC(booking.startDate), 
+        endDate: convertLocalDateToUTC(booking.endDate) 
+    }
 }`}
               </pre>
+            </div>
+
+            <p className="text-coal-300 dark:text-gray-300 mt-2">
+              This approach ensures consistent date handling regardless of user
+              location or timezone settings, maintaining data integrity
+              throughout the booking lifecycle.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Showcase */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
+          Feature Showcase
+        </h2>
+
+        <div className="space-y-8">
+          <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
+            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+              User Authentication Flow
+            </h3>
+            <p className="text-coal-300 dark:text-gray-300">
+              The authentication system intelligently routes users to either
+              signup or login based on email recognition, provides real-time
+              validation feedback, and offers a streamlined demo user option for
+              quick exploration.
+            </p>
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-coal-800 dark:bg-gray-900">
+              <Image
+                alt="User authentication demonstration"
+                src="/projects/UserAuth.webp"
+                className="object-contain"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
+          </div>
+
+          <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
+            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+              Interactive Map Integration
+            </h3>
+            <p className="text-coal-300 dark:text-gray-300">
+              The Google Maps integration allows users to browse available
+              properties geographically, with custom-styled markers and
+              infoWindows providing property previews directly from the map
+              interface.
+            </p>
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-coal-800 dark:bg-gray-900">
+              <Image
+                alt="Interactive map demonstration"
+                src="/projects/map-view.webp"
+                className="object-contain"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
+          </div>
+
+          <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
+            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+              Booking Calendar System
+            </h3>
+            <p className="text-coal-300 dark:text-gray-300">
+              The booking system utilizes a customized Date Range Picker to
+              offer an intuitive date selection experience, with automatic
+              availability checking and dynamic pricing calculations.
+            </p>
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-coal-800 dark:bg-gray-900">
+              <Image
+                alt="Booking calendar demonstration"
+                src="/projects/booking-calendar.webp"
+                className="object-contain"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Demo Section */}
+      {/* Development Insights */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold font-display text-coal-100">
-          Feature Demo
+        <h2 className="text-2xl font-semibold font-display text-coal-100 dark:text-white">
+          Development Insights
         </h2>
-        <div className="relative w-full h-[500px] rounded-lg overflow-hidden bg-coal-800">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-contain"
-          >
-            <source src="/projects/UserAuth.mp4" type="video/mp4" />
-          </video>
+        <div className="prose prose-sm max-w-none text-coal-300 dark:text-gray-300">
+          <p>
+            Building Fairbnb provided valuable experience in full-stack
+            development with a focus on data integrity and user experience. Key
+            learnings included:
+          </p>
+          <ul>
+            <li>
+              Implementing proper encapsulation principles to maintain data
+              integrity is crucial for booking platforms
+            </li>
+            <li>
+              Managing date and time data requires thorough consideration of
+              timezone implications
+            </li>
+            <li>
+              Integrating third-party APIs like Google Maps and AWS S3
+              significantly enhances functionality while requiring thoughtful
+              implementation
+            </li>
+            <li>
+              Custom styling third-party components (like Date Range Picker)
+              often requires creative approaches to override default behaviors
+            </li>
+            <li>
+              A well-designed Redux store architecture is essential for managing
+              complex application state in a predictable manner
+            </li>
+          </ul>
         </div>
       </section>
     </main>
