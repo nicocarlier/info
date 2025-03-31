@@ -34,19 +34,20 @@ export const FAVORITE_BOOKS = [
     category: 'Economics',
     coverImage: '/books/the-complacent-class.jpeg',
   },
-  // {
-  //   title: "Holes",
-  //   authors: "Louis Sachar",
-  //   cover: "⛰️",
-  //   category: "Fiction"
-  // },
-  {
-    title: 'Open',
-    authors: 'Andre Agassi',
-    cover: '🎾',
-    category: 'Biography',
-    coverImage: '/books/open.jpeg',
-  },
+  //   {
+  //     title: "Holes",
+  //     authors: "Louis Sachar",
+  //     cover: "⛰️",
+  //     category: "Fiction",
+  //     coverImage: '/books/holes.jpeg'
+  //   },
+  //   {
+  //     title: 'Open',
+  //     authors: 'Andre Agassi',
+  //     cover: '🎾',
+  //     category: 'Biography',
+  //     coverImage: '/books/open.jpeg',
+  //   },
   {
     title: 'The Catcher in the Rye',
     authors: 'J. D. Salinger',
@@ -60,6 +61,13 @@ export const FAVORITE_BOOKS = [
     category: 'History',
     coverImage: '/books/sapiens.jpeg',
   },
+  {
+    title: 'The Magic of Reality',
+    authors: 'Richard Dawkins',
+    cover: '🔮',
+    category: 'Science',
+    coverImage: '/books/magic-of-reality.jpeg',
+  },
 ];
 
 export const CURRENTLY_READING = [
@@ -69,4 +77,32 @@ export const CURRENTLY_READING = [
     subtitle: 'Paths, Dangers, Strategies',
     coverImage: '/books/superintellegence.jpeg',
   },
+];
+
+export const RECENT_TRIPS = [
+  {
+    date: '26 Dec',
+    location: 'Bali, Indonesia',
+    flag: '🇮🇩',
+  },
+  {
+    date: '21 Dec',
+    location: 'Yasawa Islands, Fiji',
+    flag: '🇫🇯',
+  },
+  {
+    date: '3 Dec',
+    location: 'Auckland, New Zealand',
+    flag: '🇳🇿',
+  },
+];
+
+export const ACTIVITIES = [
+  { name: 'Tennis', emoji: '🎾' },
+  { name: 'Hockey', emoji: '🏑' },
+  { name: 'Rock Climbing', emoji: '🧗‍♂️' },
+  { name: 'Swimming', emoji: '🏊‍♂️' },
+  { name: 'Skiing', emoji: '⛷️' },
+  { name: 'Chess', emoji: '♟️' },
+  { name: 'Gym', emoji: '🏋️‍♂️' },
 ];

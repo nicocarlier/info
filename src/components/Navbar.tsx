@@ -25,7 +25,7 @@ const Navbar = () => {
               href="/"
               className="MenubarTrigger px-3 text-gray-700 dark:text-coal-300 hover:text-gray-900 dark:hover:text-coal-100"
             >
-              Home
+              About
             </Link>
           </Menubar.Menu>
 
