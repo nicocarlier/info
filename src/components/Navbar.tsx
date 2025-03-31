@@ -7,10 +7,10 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../app/context/ThemeContext';
 
 const PROJECTS = [
-  { name: 'Fairbnb - an Airbnb clone', slug: 'fairbnb' },
-  { name: 'Chess App', slug: 'chess-app' },
-  { name: "Reps 'N Recipes", slug: 'reps-n-recipes' },
-  { name: 'Mini Projects', slug: 'mini-projects' },
+  { name: '🏠  Fairbnb (Airbnb clone)', slug: 'fairbnb' },
+  { name: '♟️  Chess App', slug: 'chess-app' },
+  { name: "💪  Reps 'N Recipes", slug: 'reps-n-recipes' },
+  { name: '🛠️  Mini Projects', slug: 'mini-projects' },
 ];
 
 const Navbar = () => {

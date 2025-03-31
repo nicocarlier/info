@@ -23,18 +23,18 @@ export default function Home() {
           </figure>
         </div>
         <div className="space-y-5">
-          <h2 className="space-x-3 text-3xl font-semibold font-display text-coal-100">
+          <h2 className="space-x-3 text-3xl font-semibold font-display">
             <span className="wave inline-block animate-wave" aria-hidden="true">
               👋{' '}
             </span>
             <span>{"Hi, I'm Nico"}</span>
           </h2>
-          <p className="text-lg text-coal-300">
+          <p className="text-lg opacity-80">
             I'm currently building exciting projects as a full-stack software
             engineer, focusing on creating impactful solutions using
             cutting-edge technologies.
           </p>
-          <p className="text-coal-400">
+          <p className="opacity-60">
             I have experience in various fields including AI, web development,
             and open-source contributions. Previously, I worked on projects
             involving [Project A] and [Project B]. I'm passionate about
@@ -42,7 +42,7 @@ export default function Home() {
           </p>
           <Link
             href="/about"
-            className="text-coal-200 hover:text-coal-100 hover:underline"
+            className="opacity-80 hover:opacity-100 hover:underline"
           >
             Learn more about me
           </Link>
@@ -53,19 +53,19 @@ export default function Home() {
         <div className="space-y-12">
           <article className="space-y-4">
             <header className="space-y-1">
-              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display text-coal-100">
+              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🌈</span>
                 <Link href="/themes" className="hover:underline">
                   Theme for 2024
                 </Link>
               </h2>
-              <p className="text-coal-400">
+              <p className="opacity-60">
                 Yearly theme that dictates quarterly goals
               </p>
             </header>
-            <div className="relative p-4 space-y-2 bg-coal-800/50 rounded shadow-sm backdrop-blur-sm">
-              <p className="text-2xl text-coal-100">Growth and Innovation</p>
-              <p className="h-20 overflow-hidden text-sm text-coal-300">
+            <div className="relative p-4 space-y-2 bg-gray-100 dark:bg-coal-800/50 rounded shadow-sm backdrop-blur-sm">
+              <p className="text-2xl">Growth and Innovation</p>
+              <p className="h-20 overflow-hidden text-sm opacity-80">
                 This year, I'm focusing on expanding my skill set and
                 contributing to innovative projects that push the boundaries of
                 technology.
@@ -75,22 +75,20 @@ export default function Home() {
 
           <article className="space-y-4">
             <header className="space-y-1">
-              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display text-coal-100">
+              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">💻</span>
                 <Link href="/projects" className="hover:underline">
                   Projects
                 </Link>
               </h2>
-              <p className="text-coal-400">
-                My current and favorite work pieces
-              </p>
+              <p className="opacity-60">My current and favorite work pieces</p>
             </header>
             <div className="grid grid-cols-4 gap-4 text-xs text-center">
               {/* Replace with your actual projects */}
               {['Project A', 'Project B', 'Project C', 'Project D'].map(
                 (project, index) => (
-                  <div key={index} className="space-y-3 text-coal-300">
-                    <div className="bg-coal-800/50 rounded-2xl shadow backdrop-blur-sm aspect-square flex items-center justify-center">
+                  <div key={index} className="space-y-3 opacity-80">
+                    <div className="bg-gray-100 dark:bg-coal-800/50 rounded-2xl shadow backdrop-blur-sm aspect-square flex items-center justify-center">
                       {project[0]}
                     </div>
                     <div>{project}</div>
@@ -107,11 +105,9 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-coal-100">
                 Life
               </h2>
-              <p className="text-coal-400">
-                Tracking my life data in real time
-              </p>
+              <p className="opacity-60">Tracking my life data in real time</p>
             </header>
-            <div className="p-4 bg-gray-200 dark:bg-coal-800/50 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4">
+            <div className="p-4 bg-gray-100 dark:bg-coal-800/50 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4">
               <div className="flex space-x-3">
                 <span aria-hidden="true">🎂</span>
                 <div>
@@ -128,13 +124,13 @@ export default function Home() {
 
           <article className="space-y-4">
             <header className="space-y-1">
-              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display text-coal-100">
+              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">📕</span>
                 <Link href="/books" className="hover:underline">
                   Books
                 </Link>
               </h2>
-              <p className="text-coal-400">
+              <p className="opacity-60">
                 Currently reading and recently finished
               </p>
             </header>
@@ -143,7 +139,7 @@ export default function Home() {
               {[1, 2, 3, 4, 5].map((book) => (
                 <div
                   key={book}
-                  className="bg-coal-800/50 backdrop-blur-sm aspect-[2/3] rounded shadow"
+                  className="bg-gray-100 dark:bg-coal-800/50 backdrop-blur-sm aspect-[2/3] rounded shadow"
                 />
               ))}
             </div>

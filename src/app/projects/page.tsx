@@ -1,46 +1,5 @@
+import { HIGH_LEVEL_PROJECTS } from '@/constants/projects.conts';
 import Link from 'next/link';
-
-const projects = [
-  {
-    name: 'Fairbnb',
-    slug: 'fairbnb',
-    description:
-      'A full-stack Airbnb clone built with React, Redux, and Ruby on Rails, featuring real-time booking and interactive maps.',
-    tags: [
-      'React',
-      'Redux',
-      'Ruby on Rails',
-      'PostgreSQL',
-      'AWS S3',
-      'Google Maps API',
-    ],
-    thumbnail: '🏠',
-  },
-  {
-    name: 'Project A',
-    slug: 'project-a',
-    description:
-      'A revolutionary AI-powered application that helps users automate their daily tasks.',
-    tags: ['React', 'Python', 'Machine Learning'],
-    thumbnail: '🤖',
-  },
-  {
-    name: 'Project B',
-    slug: 'project-b',
-    description:
-      'A real-time collaboration platform for remote teams with innovative features.',
-    tags: ['Next.js', 'WebSocket', 'PostgreSQL'],
-    thumbnail: '👥',
-  },
-  {
-    name: 'Project C',
-    slug: 'project-c',
-    description:
-      'An open-source library that simplifies complex data visualizations.',
-    tags: ['TypeScript', 'D3.js', 'React'],
-    thumbnail: '📊',
-  },
-];
 
 export default function Projects() {
   return (
@@ -56,7 +15,7 @@ export default function Projects() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {projects.map((project) => (
+          {HIGH_LEVEL_PROJECTS.map((project) => (
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}

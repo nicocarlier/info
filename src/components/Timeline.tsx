@@ -11,6 +11,7 @@ import {
   FaGlobeAmericas,
   FaCode,
 } from 'react-icons/fa';
+import moment from 'moment';
 
 interface TimelineEvent {
   date: string;
@@ -21,11 +22,9 @@ interface TimelineEvent {
 }
 
 const Timeline = () => {
-  const currentDate = new Date();
-  const currentYear = currentDate.getFullYear();
-  const currentMonth = new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-  }).format(currentDate);
+  const currentDate = moment();
+  const currentYear = currentDate.format('YYYY');
+  const currentMonth = currentDate.format('MMMM');
 
   const events: TimelineEvent[] = [
     {

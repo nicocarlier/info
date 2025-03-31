@@ -1,14 +1,12 @@
+import ProjectLink from '@/components/ProjectLink';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function FairbnbProject() {
   return (
     <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0 pt-8">
       {/* Hero Section */}
       <section className="space-y-6">
-        <h1 className="text-4xl font-semibold font-display text-coal-100">
-          Fairbnb
-        </h1>
+        <h1>Fairbnb</h1>
         <p className="text-xl text-coal-300">
           A comprehensive full-stack Airbnb clone built with React/Redux
           frontend and Ruby on Rails backend, featuring Google Maps integration
@@ -17,20 +15,21 @@ export default function FairbnbProject() {
 
         {/* Project Links */}
         <div className="flex space-x-4">
-          <Link
+          <ProjectLink
             href="https://fairbnb-36c07c3f3067.herokuapp.com/"
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            variant="primary"
             target="_blank"
+            isDisabled={true}
           >
             Live Demo
-          </Link>
-          <Link
+          </ProjectLink>
+          <ProjectLink
             href="https://github.com/nicocarlier/Fairbnb"
-            className="px-4 py-2 bg-coal-800 text-white rounded-md hover:bg-coal-700"
+            variant="secondary"
             target="_blank"
           >
             GitHub Repository
-          </Link>
+          </ProjectLink>
         </div>
 
         {/* Main Project Image */}
@@ -47,11 +46,15 @@ export default function FairbnbProject() {
         </div>
       </section>
 
+      {/* Project Overview */}
+      <section className="space-y-4">
+        <h2>Project Overview</h2>
+        {/* ... */}
+      </section>
+
       {/* Technology Stack */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold font-display text-coal-100">
-          Technology Stack & Rationale
-        </h2>
+        <h2>Technology Stack</h2>
 
         <div className="space-y-6">
           <div className="space-y-2">
