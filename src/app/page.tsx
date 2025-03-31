@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Timeline from './components/Timeline';
+import Timeline from '../components/Timeline';
 
 export default function Home() {
   return (
@@ -18,13 +18,13 @@ export default function Home() {
               loading="eager"
             />
             <figcaption className="text-center text-walnut text-xs mt-2 inline-flex items-center justify-center w-full">
-              <span>&copy; Professional Photographer</span>
+              <span>Taken in Fiji</span>
             </figcaption>
           </figure>
         </div>
         <div className="space-y-5">
           <h2 className="space-x-3 text-3xl font-semibold font-display text-coal-100">
-            <span className="wave" aria-hidden="true">
+            <span className="wave inline-block animate-wave" aria-hidden="true">
               👋{' '}
             </span>
             <span>{"Hi, I'm Nico"}</span>

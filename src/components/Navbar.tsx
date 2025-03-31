@@ -1,40 +1,20 @@
 'use client';
+
 import * as React from 'react';
 import Link from 'next/link';
 import * as Menubar from '@radix-ui/react-menubar';
-import { ChevronRightIcon } from '@radix-ui/react-icons';
-import { useState, useEffect } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../app/context/ThemeContext';
 
 const PROJECTS = [
-  { name: 'Project A', slug: 'project-a' },
-  { name: 'Project B', slug: 'project-b' },
-  { name: 'Project C', slug: 'project-c' },
+  { name: 'Fairbnb - an Airbnb clone', slug: 'fairbnb' },
+  { name: 'Chess App', slug: 'chess-app' },
+  { name: "Reps 'N Recipes", slug: 'reps-n-recipes' },
+  { name: 'Mini Projects', slug: 'mini-projects' },
 ];
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode, isLoaded } = useTheme();
-
-  //   useEffect(() => {
-  //     const root = window.document.documentElement;
-  //     if (darkMode) {
-  //       root.classList.add("dark");
-  //     } else {
-  //       root.classList.remove("dark");
-  //     }
-  //   }, [darkMode]);
-
-  const links = [
-    { href: '/', label: 'Home' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/projects/fairbnb', label: 'Fairbnb' },
-    { href: 'https://github.com/nicocarlier', label: 'GitHub' },
-    {
-      href: 'https://www.linkedin.com/in/nicholas-carlier/',
-      label: 'LinkedIn',
-    },
-  ];
 
   return (
     <Menubar.Root className="MenubarRoot flex justify-center border-b border-gray-200 dark:border-coal-800 bg-white/50 dark:bg-coal-900/50 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
@@ -73,9 +53,7 @@ const Navbar = () => {
                 ))}
                 <Menubar.Separator className="MenubarSeparator" />
                 <Link href="/projects" className="block">
-                  <Menubar.Item className="MenubarItem">
-                    View All Projects
-                  </Menubar.Item>
+                  <Menubar.Item className="MenubarItem">View All</Menubar.Item>
                 </Link>
               </Menubar.Content>
             </Menubar.Portal>

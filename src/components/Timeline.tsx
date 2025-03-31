@@ -21,9 +21,15 @@ interface TimelineEvent {
 }
 
 const Timeline = () => {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+  }).format(currentDate);
+
   const events: TimelineEvent[] = [
     {
-      date: 'March 2024 - Present',
+      date: `March 2024 - ${currentMonth} ${currentYear} (Present)`,
       title: 'Software Engineer at Inventive AI (Y-Combinator)',
       description: [
         'Working with a YC-backed startup on AI agents for sales workflow automation',
@@ -33,6 +39,17 @@ const Timeline = () => {
       ],
       type: 'work',
       location: 'Mountain View, CA',
+    },
+    {
+      date: 'Septemper 2023 - March 2024',
+      title: 'Part-time software engineer at Couplr AI & Side Projects',
+      description: [
+        'Worked with an AI Financial analyst pairing app creating integrations with CRM tools',
+        'Open source contributions to multiple projects including accessibilty features for Apache Superset',
+        'Working on a side projects like Next.js Chess app and studying DS&A',
+      ],
+      type: 'work',
+      location: 'Remote',
     },
     {
       date: 'May 2023 - September 2023',
@@ -46,13 +63,22 @@ const Timeline = () => {
       location: 'San Francisco',
     },
     {
+      date: 'November 2022 - May 2023',
+      title: 'Project Engineer at Aroa Biosurgery',
+      description: [
+        'Worked on various projects for the manufacturing of biomedical devices',
+        'Wrote programs to iteratively solve for optimal linkage lengths and angles in machinery',
+      ],
+      type: 'work',
+      location: 'Auckland, New Zealand',
+    },
+    {
       date: 'February 2019 - November 2022',
       title: 'University of Auckland',
       description: [
         'Bachelor of Engineering (Honours) in Mechanical Engineering',
         'Bachelor of Commerce (Economics and Finance)',
-        'GPA: 3.7',
-        'Best Final Year Project Award (2022)',
+        'Best Mechanical Engineering Project Final Year Project Award (2022)',
         'Published research on autonomous UAV control systems',
       ],
       type: 'education',
@@ -71,31 +97,33 @@ const Timeline = () => {
     },
     {
       date: '2005',
-      title: 'Move to New Zealand',
+      title: 'Settled in New Zealand',
       description:
         'Relocated to New Zealand, where early interest in mathematics and physics developed',
       type: 'travel',
       location: 'New Zealand',
     },
     {
-      date: '2004 - 2005',
+      date: '2001 - 2005',
       title: 'Living in Vietnam',
-      description: 'Early childhood experience living abroad',
+      description:
+        'Early childhood lived abroad in Vietnam, attended a French speaking international kindergarten',
       type: 'travel',
       location: 'Vietnam',
     },
     {
-      date: '2001 - 2004',
+      date: '2000 - 2001',
       title: 'Caribbean Adventures',
       description:
-        'Early childhood spent living aboard a boat in the Caribbean',
+        'As a baby, spent half a year living aboard a boat in the Caribbean',
       type: 'travel',
       location: 'Caribbean',
     },
     {
       date: 'December 26, 2000',
       title: 'Born in Washington DC',
-      description: 'Beginning of life journey',
+      // description: 'Beginning of life journey',
+      description: '',
       type: 'travel',
       location: 'Washington DC, USA',
     },
