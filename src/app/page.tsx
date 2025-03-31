@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Timeline from '../components/Timeline';
+import { HIGH_LEVEL_PROJECTS } from '@/constants/projects.conts';
+import { FAVORITE_BOOKS, CURRENTLY_READING } from '@/constants/general.const';
 
 export default function Home() {
   return (
@@ -84,17 +86,17 @@ export default function Home() {
               <p className="opacity-60">My current and favorite work pieces</p>
             </header>
             <div className="grid grid-cols-4 gap-4 text-xs text-center">
-              {/* Replace with your actual projects */}
-              {['Project A', 'Project B', 'Project C', 'Project D'].map(
-                (project, index) => (
-                  <div key={index} className="space-y-3 opacity-80">
-                    <div className="bg-gray-100 dark:bg-coal-800/50 rounded-2xl shadow backdrop-blur-sm aspect-square flex items-center justify-center">
-                      {project[0]}
-                    </div>
-                    <div>{project}</div>
-                  </div>
-                )
-              )}
+              {HIGH_LEVEL_PROJECTS.map((project) => (
+                <div key={project.slug} className="space-y-3 opacity-80">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="bg-gray-100 dark:bg-coal-800/50 rounded-2xl shadow backdrop-blur-sm aspect-square flex items-center justify-center text-2xl hover:scale-105 transition-transform"
+                  >
+                    {project.thumbnail}
+                  </Link>
+                  <div>{project.name}</div>
+                </div>
+              ))}
             </div>
           </article>
         </div>
@@ -125,23 +127,70 @@ export default function Home() {
           <article className="space-y-4">
             <header className="space-y-1">
               <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
-                <span aria-hidden="true">📕</span>
+                <span aria-hidden="true">📚</span>
                 <Link href="/books" className="hover:underline">
-                  Books
+                  Books I've Enjoyed
                 </Link>
               </h2>
               <p className="opacity-60">
-                Currently reading and recently finished
+                A collection of books that have influenced my thinking
               </p>
             </header>
-            <div className="grid grid-cols-5 gap-4">
-              {/* Replace with your actual book data */}
-              {[1, 2, 3, 4, 5].map((book) => (
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {FAVORITE_BOOKS.map((book) => (
                 <div
-                  key={book}
-                  className="bg-gray-100 dark:bg-coal-800/50 backdrop-blur-sm aspect-[2/3] rounded shadow"
-                />
+                  key={book.title}
+                  className="aspect-[2/3] rounded-lg shadow overflow-hidden group relative"
+                >
+                  <Image
+                    src={book.coverImage}
+                    alt={`Cover of ${book.title}`}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                    <div className="text-white text-center">
+                      <p className="font-semibold text-sm">{book.title}</p>
+                      <p className="text-xs mt-1 text-gray-300">
+                        {book.authors}
+                      </p>
+                      <p className="text-[10px] mt-1 text-gray-400">
+                        {book.category}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               ))}
+            </div>
+
+            <div className="mt-8 space-y-4">
+              <header className="space-y-1">
+                <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
+                  <span aria-hidden="true">⏳</span>
+                  <span>Currently Reading</span>
+                </h2>
+              </header>
+
+              <div className="grid grid-cols-1 gap-4">
+                {CURRENTLY_READING.map((book) => (
+                  <div key={book.title} className="flex items-center space-x-4">
+                    <div className="aspect-[2/3] w-24 rounded-lg shadow overflow-hidden group relative">
+                      <Image
+                        src={book.coverImage}
+                        alt={`Cover of ${book.title}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">{book.title}</h3>
+                      <p className="text-sm opacity-60">{book.authors}</p>
+                      <p className="text-xs mt-1 opacity-60">{book.subtitle}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </article>
         </div>
