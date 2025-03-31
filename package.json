@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "deploy": "next build && touch out/.nojekyll && gh-pages -d out --dotfiles",
     "prepare": "husky install",
     "format": "prettier --write .",
