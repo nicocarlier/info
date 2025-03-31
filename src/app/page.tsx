@@ -8,7 +8,8 @@ import {
   ACTIVITIES,
   RECENT_TRIPS,
 } from '@/constants/general.const';
-import { LiveAgeTracker, LiveLocalTimeTracker } from '@/components/LifeSection';
+import LiveAgeTracker from '@/components/LiveAgeTracker';
+import LiveLocalTimeTracker from '@/components/LiveLocalTimeTracker';
 
 export default function About() {
   return (
@@ -244,6 +245,7 @@ export default function About() {
                     src={book.coverImage}
                     alt={`Cover of ${book.title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">

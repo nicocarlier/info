@@ -19,7 +19,7 @@ import { useTheme } from '@/app/context/ThemeContext';
 import { LIFE_EVENTS, TimelineEvent } from '@/constants/lifeEvents.const';
 
 const Timeline = () => {
-  const { darkMode } = useTheme();
+  const { theme } = useTheme();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
@@ -108,7 +108,7 @@ const Timeline = () => {
       boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)',
       padding: '1.5rem',
       border: 'none',
-      backgroundColor: darkMode ? '#1e1e1e' : 'white',
+      backgroundColor: theme === 'dark' ? '#1e1e1e' : 'white',
     };
 
     switch (type) {
@@ -205,7 +205,7 @@ const Timeline = () => {
                     dateClassName={`text-gray-600 dark:text-gray-300 font-medium mr-4 ml-4`}
                     contentStyle={getContentStyle(event.type)}
                     contentArrowStyle={{
-                      borderRight: `10px solid ${darkMode ? '#1e1e1e' : 'white'}`,
+                      borderRight: `10px solid ${theme === 'dark' ? '#1e1e1e' : 'white'}`,
                     }}
                     iconStyle={getIconStyle(event.type)}
                     icon={getIcon(event.type)}

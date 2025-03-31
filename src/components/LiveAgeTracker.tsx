@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-export const LiveAgeTracker = () => {
+const LiveAgeTracker = () => {
   // Birth date constant
   const BIRTH_DATE = new Date('December 26, 2000 14:00:00');
 
@@ -72,19 +72,4 @@ export const LiveAgeTracker = () => {
   );
 };
 
-export const LiveLocalTimeTracker = () => {
-  return (
-    <div className="flex space-x-3">
-      <span aria-hidden="true">📍</span>
-      <div>
-        <p className="text-gray-900 dark:text-coal-100">
-          Currently in San Francisco Bay Area, United States
-        </p>
-        <p className="text-sm text-gray-600 dark:text-coal-300">
-          {new Date().toLocaleTimeString()} (UTC{' '}
-          {new Date().getTimezoneOffset() / -60})
-        </p>
-      </div>
-    </div>
-  );
-};
+export default LiveAgeTracker;
