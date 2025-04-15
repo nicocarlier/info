@@ -10,6 +10,9 @@ import {
 } from '@/constants/general.const';
 import LiveAgeTracker from '@/components/LiveAgeTracker';
 import LiveLocalTimeTracker from '@/components/LiveLocalTimeTracker';
+import { CodeIcon } from '@radix-ui/react-icons';
+import { BsRobot } from 'react-icons/bs';
+import { GiLightBulb } from 'react-icons/gi';
 
 export default function About() {
   return (
@@ -34,59 +37,108 @@ export default function About() {
         </div>
 
         {/* About me */}
-        <div className="space-y-5">
-          <h2 className="space-x-3 text-3xl font-semibold font-display">
+        <div className="space-y-5 ">
+          <h2 className="space-x-3 text-3xl font-semibold font-display text-gray-900 dark:text-coal-100">
             <span className="wave inline-block animate-wave" aria-hidden="true">
               👋{' '}
             </span>
-            <span>{"Hi, I'm Nico"}</span>
+            <span>Hi, I'm Nico</span>
           </h2>
-          <p className="text-lg opacity-80">
+          <p className="text-lg opacity-80 text-gray-900 dark:text-coal-100">
             Full-stack engineer at Inventive AI, where we're building AI agents
             to automate sales tasks and RFP responses. I work with React,
             Next.js, TypeScript, and Django developing knowledge systems and
             collaboration tools.
           </p>
-          <p className="opacity-60">
+          <p className="opacity-60 text-gray-900 dark:text-coal-100">
             I began in mechanical engineering before transitioning to software
             development. My focus has been on AI platforms, web applications,
             and optimization tools. Based in the San Francisco Bay Area, I enjoy
             solving complex technical challenges.
           </p>
-          <p className="opacity-60">
+          <p className="opacity-60 text-gray-900 dark:text-coal-100">
             Outside of work, I hike Bay Area trails, play tennis and rugby, and
             read books on tech and science, or sci-fi novels.
           </p>
         </div>
       </section>
 
-      <section className="grid-cols-2 gap-16 sm:grid space-y-8 sm:space-y-0">
+      <section className="grid-cols-2 gap-16 sm:grid space-y-8 sm:space-y-0 ">
         <div className="space-y-12">
           {/* Theme for 2025 */}
-          <article className="space-y-4">
+          <article className="space-y-4 dark:bg-coal-800 bg-coal-200 p-2 ">
             <header className="space-y-1">
-              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
-                <span aria-hidden="true">🎯</span>
-                <div>Goals for 2025</div>
+              <h2 className="mb-6 text-gray-900 dark:text-coal-100">
+                <span className="mr-4">🎯{'  '}</span>
+                Goals for 2025
               </h2>
-              <p className="opacity-60">
-                Annual focus that shapes my projects and decisions
+              <p className="opacity-60 text-gray-900 dark:text-coal-100">
+                Annual focus that guides my decisions
               </p>
             </header>
             <div className="relative space-y-4 rounded shadow-sm backdrop-blur-sm">
               <div>
-                <p className="text-2xl">Deep Expertise</p>
-                <p className="overflow-hidden text-sm opacity-80">
-                  This year I'm diving deeper into my core technologies rather
-                  than spreading wide. Focusing on mastering React performance
-                  optimization, TypeScript architecture patterns, and advanced
-                  state management techniques to build more robust, maintainable
-                  applications.
+                <p className="text-xl mb-2 text-gray-900 dark:text-coal-100">
+                  Work Goals
                 </p>
+
+                <div className="space-y-3">
+                  <div className="flex space-x-3">
+                    <span aria-hidden="true" className="h-6 flex items-center">
+                      <CodeIcon />
+                    </span>
+                    <div>
+                      <p className="text-gray-900 dark:text-coal-100">
+                        Deep Expertise
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-coal-300">
+                        Mastering React performance optimization, TypeScript
+                        architecture patterns, and advanced state management
+                        techniques to build more robust, maintainable
+                        applications.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <span aria-hidden="true" className="h-6 flex items-center">
+                      <BsRobot />
+                    </span>
+                    <div>
+                      <p className="text-gray-900 dark:text-coal-100">
+                        Continue exploring Latest AI technologies
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-coal-300">
+                        Build projects or features using the latest AI
+                        technologies. Most recently I aim to build an app using
+                        Model Context Protocol (MCP)
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <span aria-hidden="true" className="h-6 flex items-center">
+                      <GiLightBulb />
+                    </span>
+                    <div>
+                      <p className="text-gray-900 dark:text-coal-100">
+                        Practice deep work
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-coal-300">
+                        Focus on maximising my impact during working hours -
+                        practicing Cal Newport's techniques in his book.
+                        Minimise context switching and practice diving deep with
+                        intense focus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="pt-3 border-t border-gray-200 dark:border-coal-700">
-                <p className="text-xl mb-2">Personal Goals</p>
+                <p className="text-xl mb-2 text-gray-900 dark:text-coal-100">
+                  Personal Goals
+                </p>
 
                 <div className="space-y-3">
                   <div className="flex space-x-3">
@@ -129,15 +181,20 @@ export default function About() {
           </article>
 
           {/* Projects */}
-          <article className="space-y-4">
+          <article className="space-y-4 dark:bg-coal-800 bg-coal-200 p-2">
             <header className="space-y-1">
               <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">💻</span>
-                <Link href="/projects" className="hover:underline">
+                <Link
+                  href="/projects"
+                  className="hover:underline text-gray-900 dark:text-coal-100"
+                >
                   Projects
                 </Link>
               </h2>
-              <p className="opacity-60">My current and favorite work pieces</p>
+              <p className="opacity-60 text-gray-900 dark:text-coal-100">
+                My current and favorite work pieces
+              </p>
             </header>
             <div className="space-y-3">
               {HIGH_LEVEL_PROJECTS.map((project) => (
@@ -171,20 +228,32 @@ export default function About() {
         </div>
 
         <div className="space-y-12">
-          {/* Life */}
-          <article className="space-y-4 flex flex-col">
+          <article className="space-y-4 dark:bg-coal-800 bg-coal-200 p-2">
             <header className="space-y-1">
-              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-coal-100">
-                <span className="mr-2">🧬</span>Life
+              <h2 className="mb-6 text-gray-900 dark:text-coal-100">
+                <span className="mr-2">🧬</span>
+                Life
               </h2>
-              <p className="opacity-60">Tracking my life data in real time</p>
+              <p className="opacity-60 text-gray-900 dark:text-coal-100">
+                Tracking my life data in real time
+              </p>
             </header>
-            <div className="p-4 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4">
+            <div className="relative space-y-4 rounded shadow-sm backdrop-blur-sm">
+              <p className="text-xl mb-2 text-gray-900 dark:text-coal-100">
+                Time Tracking
+              </p>
+
               {/* Age */}
               <LiveAgeTracker />
 
               {/* Location */}
               <LiveLocalTimeTracker />
+
+              <div className=" border-t border-gray-200 mb-3" />
+
+              <p className="text-xl mb-2 text-gray-900 dark:text-coal-100">
+                Hobbies
+              </p>
 
               {/* Activities */}
               <div className="flex space-x-3">
@@ -223,13 +292,13 @@ export default function About() {
             </div>
           </article>
 
-          <article className="space-y-4">
+          <article className="space-y-4 dark:bg-coal-800 bg-coal-200  p-4">
             <header className="space-y-1">
-              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
+              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display text-gray-900 dark:text-coal-100">
                 <span aria-hidden="true">📚</span>
                 <div>Books I Enjoyed</div>
               </h2>
-              <p className="opacity-60">
+              <p className="opacity-60 text-gray-900 dark:text-coal-100">
                 A collection of books that have influenced my thinking
               </p>
             </header>
@@ -264,9 +333,9 @@ export default function About() {
             </div>
 
             {/* Currently Reading */}
-            {/* <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-4 ">
               <header className="space-y-1">
-                <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
+                <h2 className="flex items-center space-x-3 text-xl font-semibold font-display text-gray-900 dark:text-coal-100">
                   <span aria-hidden="true">⏳</span>
                   <span>Currently Reading</span>
                 </h2>
@@ -283,7 +352,7 @@ export default function About() {
                         className="object-cover"
                       />
                     </div>
-                    <div>
+                    <div className="text-gray-900 dark:text-coal-100">
                       <h3 className="font-semibold">{book.title}</h3>
                       <p className="text-sm opacity-60">{book.authors}</p>
                       <p className="text-xs mt-1 opacity-60">{book.subtitle}</p>
@@ -291,7 +360,7 @@ export default function About() {
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
           </article>
         </div>
       </section>

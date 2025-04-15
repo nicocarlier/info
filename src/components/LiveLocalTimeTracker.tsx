@@ -1,5 +1,6 @@
 'use client';
 
+import { TimerIcon } from '@radix-ui/react-icons';
 import React, { useState, useEffect } from 'react';
 
 const LiveLocalTimeTracker = () => {
@@ -24,7 +25,18 @@ const LiveLocalTimeTracker = () => {
   }, []);
 
   // Only render the time if it's available (client-side)
-  return <p className="text-sm text-gray-500">{time}</p>;
+  return (
+    <div className="flex items-center space-x-3">
+      <span aria-hidden="true">
+        <TimerIcon />
+      </span>
+      <div>
+        <p className="text-gray-900 dark:text-coal-100">
+          {`My local time: ${time}`}
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default LiveLocalTimeTracker;

@@ -65,7 +65,7 @@ const Navbar = () => {
               href="https://github.com/nicocarlier"
               target="_blank"
               rel="noopener noreferrer"
-              className="MenubarTrigger px-3 text-gray-700 dark:text-coal-300 hover:text-gray-900 dark:hover:text-coal-100"
+              className="MenubarTrigger px-3 text-gray-700 dark:text-coal-300 hover:text-gray-900 dark:hover:text-coal-100 hover:underline"
             >
               GitHub
             </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/nicholas-carlier/"
               target="_blank"
               rel="noopener noreferrer"
-              className="MenubarTrigger px-3 text-gray-700 dark:text-coal-300 hover:text-gray-900 dark:hover:text-coal-100"
+              className="MenubarTrigger px-3 text-gray-700 dark:text-coal-300 hover:text-gray-900 dark:hover:text-coal-100 hover:underline"
             >
               LinkedIn
             </a>
