@@ -44,12 +44,12 @@ export const HIGH_LEVEL_PROJECTS = [
     ],
     thumbnail: '💪',
   },
-  // {
-  //   name: 'Mini Projects',
-  //   slug: 'mini-projects',
-  //   description:
-  //     'A collection of focused applications showcasing various technologies and algorithms, including YouTube transcript processing, game AI, and more.',
-  //   tags: ['JavaScript', 'React', 'APIs', 'Algorithms', 'UI/UX'],
-  //   thumbnail: '🧩',
-  // },
+  {
+    name: 'Mini Projects',
+    slug: 'mini-projects',
+    description:
+      'A collection of focused applications showcasing various technologies and algorithms, including YouTube transcript processing, game AI, and more.',
+    tags: ['JavaScript', 'React', 'APIs', 'Algorithms', 'UI/UX'],
+    thumbnail: '🧩',
+  },
 ];
