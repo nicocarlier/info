@@ -6,6 +6,7 @@ import * as Menubar from '@radix-ui/react-menubar';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../app/context/ThemeContext';
 import { NAV_PROJECTS } from '@/constants/projects.conts';
+import GoogleCalendarButton from './GoogleCalendarButton';
 
 const SunIcon = () => (
   <FiSun className="w-5 h-5 text-gray-800 dark:text-gray-200" />
@@ -61,6 +62,7 @@ const Navbar = () => {
           </Menubar.Menu>
 
           <div className="flex items-center ml-auto space-x-4">
+            <GoogleCalendarButton />
             <a
               href="https://github.com/nicocarlier"
               target="_blank"
