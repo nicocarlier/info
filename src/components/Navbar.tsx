@@ -63,6 +63,7 @@ const Navbar = () => {
 
           <div className="flex items-center ml-auto space-x-4">
             <GoogleCalendarButton />
+
             <a
               href="https://github.com/nicocarlier"
               target="_blank"

@@ -1,13 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+
+// Birth date constant
+const BIRTH_DATE = new Date('December 26, 2000 14:00:00');
 
 const LiveAgeTracker = () => {
-  // Birth date constant
-  const BIRTH_DATE = new Date('December 26, 2000 14:00:00');
-
   // State for age
-  const [age, setAge] = useState(0);
   const [nextBirthday, setNextBirthday] = useState('');
   const [ageBreakdown, setAgeBreakdown] = useState({
     years: 0,
@@ -31,7 +30,6 @@ const LiveAgeTracker = () => {
       const hours = totalHours % 24;
 
       setAgeBreakdown({ years, months, days, hours });
-      setAge(diffMs / (1000 * 60 * 60 * 24 * 365.25));
 
       // Calculate months until next birthday
       const currentYear = now.getFullYear();

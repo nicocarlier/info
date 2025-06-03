@@ -24,7 +24,7 @@ export default function ChessAppProject() {
         </p>
 
         {/* Project Links */}
-        <div className="flex space-x-4">
+        {/* <div className="flex space-x-4">
           <ProjectLink
             href="https://nextchess.vercel.app/"
             variant="primary"
@@ -40,7 +40,7 @@ export default function ChessAppProject() {
           >
             GitHub Repository
           </ProjectLink>
-        </div>
+        </div> */}
 
         {/* Main Project Image with Slider */}
         <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-coal-800 dark:bg-gray-800">
@@ -423,7 +423,7 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
       </section>
 
       {/* Feature Showcase */}
-      <section className="space-y-6">
+      {/* <section className="space-y-6">
         <h2>Feature Showcase</h2>
 
         <div className="space-y-8">
@@ -487,7 +487,7 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Development Insights */}
       <section className="space-y-4">

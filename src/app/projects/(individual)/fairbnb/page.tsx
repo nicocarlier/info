@@ -24,7 +24,7 @@ export default function FairbnbProject() {
         </p>
 
         {/* Project ProjectLinks */}
-        <div className="flex space-x-4">
+        {/* <div className="flex space-x-4">
           <ProjectLink
             href="https://fairbnb-36c07c3f3067.herokuapp.com/"
             variant="primary"
@@ -40,7 +40,7 @@ export default function FairbnbProject() {
           >
             GitHub Repository
           </ProjectLink>
-        </div>
+        </div> */}
 
         {/* Main Project Image with Slider */}
         <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-coal-800 dark:bg-gray-800">
@@ -347,14 +347,38 @@ export const UTCDateBooking = (booking) => {
         </div>
       </section>
 
+      {/* Features without images */}
+      {/* <section className="space-y-4">
+        <h2>Features</h2>
+        <div className="prose prose-sm max-w-none text-coal-300 dark:text-gray-300">
+          <ul>
+            <li>
+              <span className="underline">User Authentication flow.</span>
+              {" "}Routes users to either signup or login based on email recognition, provides real-time validation feedback
+            </li>
+            <li>
+              <span className="underline">Interactive Map Integration.</span>
+              {" "}Google Maps integration allowing users to browse available
+              properties geographically, with custom-styled markers and
+              infoWindows providing property previews directly from the map
+              interface.
+            </li>
+            <li>
+              <span className="underline">Booking Calendar System.</span>
+              {" "}Customized Date Range Picker for intuitive date selection experience. Availability vailability checking and dynamic pricing based on period
+            </li>
+          </ul>
+        </div>
+      </section> */}
+
       {/* Feature Showcase */}
-      <section className="space-y-6">
+      {/* <section className="space-y-6">
         <h2>Feature Showcase</h2>
 
         <div className="space-y-8">
           <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
             <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
-              User Authentication Flow
+              User Authentication Flow 
             </h3>
             <p className="text-coal-300 dark:text-gray-300">
               The authentication system intelligently routes users to either
@@ -414,7 +438,7 @@ export const UTCDateBooking = (booking) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Development Insights */}
       <section className="space-y-4">
