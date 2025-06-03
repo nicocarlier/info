@@ -19,11 +19,6 @@ export default function Projects() {
               href={`/projects/${project.slug}`}
               className="group block p-6 dark:bg-coal-900/50 bg-coal-100/50 rounded-xl hover:bg-coal-200/50 dark:hover:bg-coal-800/50 transition-colors relative"
             >
-              {project.slug === 'chess-app' && (
-                <div className="absolute top-1 right-1 px-2 py-1 bg-blue-600 text-xs text-white rounded-lg font-medium">
-                  In Progress
-                </div>
-              )}
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <span className="text-3xl" aria-hidden="true">

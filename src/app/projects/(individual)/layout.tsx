@@ -12,7 +12,7 @@ export default function ProjectsLayout({
           href="/projects"
           className="text-coal-700 dark:text-coal-300 hover:text-coal-100 transition-colors"
         >
-          ← Back to All Projects
+          ← All Projects
         </Link>
       </div>
       {children}

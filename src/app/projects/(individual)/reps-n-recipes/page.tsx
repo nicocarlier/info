@@ -7,7 +7,25 @@ export default function RepsNRecipesProject() {
     <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
       {/* Hero Section */}
       <section className="space-y-6">
-        <h1>Reps 'N Recipes</h1>
+        <div className="flex flex-col">
+          <h1>Reps 'N Recipes</h1>
+          {/* Project Details */}
+          <div className=" flex-wrap w-fit bg-coal-100 dark:bg-coal-800 py-1 px-2 rounded-md flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0 text-sm text-coal-400 dark:text-gray-400">
+            <div className="flex items-center space-x-2">
+              <span className="font-medium">Created:</span>
+              <span>September 2023</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="font-medium">Duration:</span>
+              <span>2.5 weeks</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="font-medium">Co-collaborators:</span>
+              <span>Elliot Chang, Stefan Lazarevic</span>
+            </div>
+          </div>
+        </div>
+
         <p className="text-xl dark:text-coal-300 text-coal-700">
           A comprehensive fitness application that combines workout tracking and
           nutrition management, helping users achieve their health and wellness
@@ -198,7 +216,7 @@ export default function RepsNRecipesProject() {
 
         <div className="space-y-8">
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold text-coal-300">
               Health Profile Setup
             </h3>
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden bg-coal-800">
@@ -213,7 +231,7 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold text-coal-300">
               Workout Management
             </h3>
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden bg-coal-800">
@@ -228,7 +246,7 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold text-coal-300">
               Nutrition Tracking
             </h3>
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden bg-coal-800">
@@ -243,7 +261,7 @@ export default function RepsNRecipesProject() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-coal-200">
+            <h3 className="text-xl font-semibold text-coal-300">
               Progress Analytics
             </h3>
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden bg-coal-800">
@@ -332,15 +350,6 @@ export default function RepsNRecipesProject() {
           </div>
         </div>
       </section> */}
-
-      {/* Collaborators */}
-      <section className="space-y-4">
-        <h2>Collaborators</h2>
-        <div className="flex flex-wrap gap-4">
-          <span className="mr-2">Elliot Chang</span>
-          <span className="mr-2">Stefan Lazarevic</span>
-        </div>
-      </section>
     </main>
   );
 }

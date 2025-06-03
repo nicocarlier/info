@@ -13,34 +13,29 @@ export default function ChessAppProject() {
   ];
 
   return (
-    <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+    <main className="max-w-screen-md px-4 mx-auto space-y-12 md:px-0 ">
       {/* Hero Section */}
       <section className="space-y-6">
-        <h1>NextChess</h1>
-        <p className="text-xl text-coal-300 dark:text-gray-300">
+        <div className="flex flex-col">
+          <h1>NextChess</h1>
+          {/* Project Details */}
+          <div className="w-fit bg-coal-100 dark:bg-coal-800 py-1 px-2 rounded-md flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0 text-sm text-coal-500 dark:text-gray-400">
+            <div className="flex items-center space-x-2">
+              <span className="font-medium">Created:</span>
+              <span>April 2024</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="font-medium">Duration:</span>
+              <span>3.5 weeks</span>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-xl ">
           A full-stack chess platform built with Next.js and TypeScript,
           featuring real-time multiplayer gameplay, custom move validation
           engine, and responsive design for all devices.
         </p>
-
-        {/* Project Links */}
-        {/* <div className="flex space-x-4">
-          <ProjectLink
-            href="https://nextchess.vercel.app/"
-            variant="primary"
-            target="_blank"
-            isDisabled={true}
-          >
-            Live Demo
-          </ProjectLink>
-          <ProjectLink
-            href="https://github.com/nicocarlier/chess-nextjs"
-            variant="secondary"
-            target="_blank"
-          >
-            GitHub Repository
-          </ProjectLink>
-        </div> */}
 
         {/* Main Project Image with Slider */}
         <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-coal-800 dark:bg-gray-800">
@@ -81,14 +76,14 @@ export default function ChessAppProject() {
       {/* Project Overview */}
       <section className="space-y-4">
         <h2>Project Overview</h2>
-        <p className="text-coal-300 dark:text-gray-300">
+        <p className="">
           NextChess is a comprehensive chess platform that brings the classic
           game into the modern web era. Built with a focus on performance and
           user experience, it combines a custom chess engine with an intuitive
           interface to deliver an engaging gameplay experience for players of
           all skill levels.
         </p>
-        <p className="text-coal-300 dark:text-gray-300">
+        <p className="">
           The application offers real-time multiplayer matches, AI opponents,
           game history tracking, and responsive design that adapts seamlessly to
           any device. By leveraging Next.js 14 and TypeScript, the platform
@@ -103,10 +98,10 @@ export default function ChessAppProject() {
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-600 dark:text-gray-200">
               Frontend & Backend
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               Built with Next.js 14, leveraging its full-stack capabilities for
               server-side rendering, API routes, and seamless page transitions.
               TypeScript provides robust type safety throughout the codebase,
@@ -115,10 +110,10 @@ export default function ChessAppProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-500 dark:text-gray-200">
               State Management
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               Redux manages application state, providing a predictable state
               container for complex chess logic, game history, and user
               interactions. This architecture ensures consistent state across
@@ -128,10 +123,10 @@ export default function ChessAppProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-500 dark:text-gray-200">
               Styling & Responsiveness
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               Tailwind CSS combined with CSS modules creates a responsive and
               visually appealing interface. The design system adapts gracefully
               from mobile to desktop, maintaining usability and aesthetic
@@ -140,10 +135,10 @@ export default function ChessAppProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-500 dark:text-gray-200">
               Real-time Communication
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               WebSocket integration enables real-time multiplayer gameplay with
               minimal latency. Players experience smooth, responsive
               interactions during matches, enhancing the competitive nature of
@@ -152,10 +147,10 @@ export default function ChessAppProject() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-500 dark:text-gray-200">
               Deployment
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               Vercel platform provides seamless deployment with automatic
               preview environments for each pull request, ensuring high
               availability and performance for users worldwide.
@@ -168,41 +163,41 @@ export default function ChessAppProject() {
       <section className="space-y-6">
         <h2>Key Features</h2>
         <div className="grid gap-6 sm:grid-cols-2">
-          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
+          <div className="bg-coal-200 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-black dark:text-white text-lg mb-3">
               Custom Chess Engine
             </h3>
-            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+            <ul className="space-y-3 text-coal-900 dark:text-gray-300 text-sm">
               <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
+                <span className="mr-2">•</span>
                 <span>
                   Hand-crafted move validation system with specialized piece
                   classes
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
+                <span className="mr-2">•</span>
                 <span>FEN notation support for game state serialization</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
+                <span className="mr-2">•</span>
                 <span>
                   Advanced chess rules including en passant, castling, and
                   promotion
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
+                <span className="mr-2">•</span>
                 <span>Comprehensive check and checkmate detection</span>
               </li>
             </ul>
           </div>
 
-          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
+          <div className="bg-coal-200 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-black dark:text-white text-lg mb-3">
               Multiplayer & AI
             </h3>
-            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+            <ul className="space-y-3 text-coal-900 dark:text-gray-300 text-sm">
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
                 <span>
@@ -224,11 +219,11 @@ export default function ChessAppProject() {
             </ul>
           </div>
 
-          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
+          <div className="bg-coal-200 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-black dark:text-white text-lg mb-3">
               Interactive UI
             </h3>
-            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+            <ul className="space-y-3 text-coal-900 dark:text-gray-300 text-sm">
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
                 <span>
@@ -255,11 +250,11 @@ export default function ChessAppProject() {
             </ul>
           </div>
 
-          <div className="bg-coal-800/50 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="font-semibold text-coal-100 dark:text-white text-lg mb-3">
+          <div className="bg-coal-200 dark:bg-gray-800/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-black dark:text-white text-lg mb-3">
               User Experience
             </h3>
-            <ul className="space-y-3 text-coal-300 dark:text-gray-300 text-sm">
+            <ul className="space-y-3 text-coal-900 dark:text-gray-300 text-sm">
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
                 <span>Secure authentication via GitHub and Google OAuth</span>
@@ -287,11 +282,9 @@ export default function ChessAppProject() {
       <section className="space-y-6">
         <h2>Technical Challenges & Solutions</h2>
 
-        <div className="bg-coal-800/30 dark:bg-gray-800/30 p-6 rounded-lg space-y-4">
-          <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
-            Performance Optimization
-          </h3>
-          <p className="text-coal-300 dark:text-gray-300">
+        <div className="text-coal-900 dark:text-gray-200 bg-coal-800/30 dark:bg-gray-800/30 p-6 rounded-lg space-y-4">
+          <h3 className="text-xl font-semibold">Performance Optimization</h3>
+          <p className="">
             One of the most significant challenges was managing component
             re-renders in the chessboard. With 64 squares and multiple pieces,
             even small state changes would trigger cascading re-renders,
@@ -299,12 +292,12 @@ export default function ChessAppProject() {
           </p>
 
           <div className="space-y-2">
-            <h4 className="font-medium text-coal-200 dark:text-gray-200">
+            <h4 className="font-medium">
               Problem: DragClone Excessive Re-rendering
             </h4>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               The{' '}
-              <code className="bg-coal-700/50 dark:bg-gray-700/50 px-1.5 py-0.5 rounded text-xs">
+              <code className="bg-coal-200 text-coal-800 dark:text-coal-200 dark:bg-coal-600 px-1.5 py-0.5 rounded text-xs">
                 DragClone
               </code>{' '}
               component's position state changes were causing unnecessary
@@ -313,7 +306,7 @@ export default function ChessAppProject() {
             </p>
 
             <div className="bg-coal-800 dark:bg-gray-900 p-4 rounded-md">
-              <pre className="text-sm text-coal-300 dark:text-gray-300 overflow-x-auto">
+              <pre className="text-sm text-coal-100 dark:text-gray-300 overflow-x-auto">
                 {`const usePreviousProps = (props) => {
     const ref = useRef();
     useEffect(() => {
@@ -324,10 +317,10 @@ export default function ChessAppProject() {
               </pre>
             </div>
 
-            <p className="text-coal-300 dark:text-gray-300 mt-2">
+            <p className="">
               I implemented a custom hook to compare prop changes between
               renders, which helped identify{' '}
-              <code className="bg-coal-700/50 dark:bg-gray-700/50 px-1.5 py-0.5 rounded text-xs">
+              <code className="bg-coal-200 text-coal-800 dark:text-coal-200 dark:bg-coal-600 px-1.5 py-0.5 rounded text-xs">
                 playMoveIfValid
               </code>{' '}
               as the volatile prop. Further analysis revealed unstable
@@ -336,58 +329,50 @@ export default function ChessAppProject() {
             </p>
           </div>
 
-          <div className="space-y-2 mt-4">
-            <h4 className="font-medium text-coal-200 dark:text-gray-200">
-              Solution: Strategic Memoization
-            </h4>
-            <p className="text-coal-300 dark:text-gray-300">
+          <div className="space-y-2">
+            <h4 className="font-medium">Solution: Strategic Memoization</h4>
+            <p className="">
               The solution involved multiple optimization techniques:
             </p>
-            <ul className="space-y-2 text-coal-300 dark:text-gray-300 pl-5">
-              <li className="list-disc">
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>
                 Ensuring dependency stability in useCallback and useMemo hooks
               </li>
-              <li className="list-disc">
-                Applying React.memo correctly to prevent unnecessary component
-                re-renders
+              <li>
+                Implementing React.memo for chess square components with custom
+                comparison functions
               </li>
-              <li className="list-disc">
-                Implementing request throttling for drag operations
+              <li>
+                Separating drag state management from board rendering logic
               </li>
-              <li className="list-disc">
-                Restructuring component hierarchy to minimize render cascades
+              <li>
+                Using useRef for position tracking to avoid unnecessary state
+                updates
               </li>
             </ul>
-            <p className="text-coal-300 dark:text-gray-300 mt-2">
-              These optimizations resulted in a 60% reduction in render
-              operations during gameplay, providing a smoother user experience
-              even during rapid move sequences.
-            </p>
           </div>
         </div>
 
-        <div className="bg-coal-800/30 dark:bg-gray-800/30 p-6 rounded-lg space-y-4">
-          <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
-            Chess Logic Implementation
-          </h3>
-          <p className="text-coal-300 dark:text-gray-300">
+        <div className="text-coal-900 dark:text-gray-200 bg-coal-800/30 dark:bg-gray-800/30 p-6 rounded-lg space-y-4">
+          <h3 className="text-xl font-semibold ">Chess Logic Implementation</h3>
+          <p className="">
             Building a robust chess engine required careful consideration of the
             game's complex rules, particularly for special moves like castling
             and detecting check/checkmate conditions.
           </p>
 
           <div className="space-y-2">
-            <h4 className="font-medium text-coal-200 dark:text-gray-200">
+            <h4 className="font-medium ">
               Object-Oriented Design with Inheritance
             </h4>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               I implemented a class-based structure for chess pieces, using
               inheritance and composition to share common behaviors while
               allowing piece-specific move logic:
             </p>
 
             <div className="bg-coal-800 dark:bg-gray-900 p-4 rounded-md">
-              <pre className="text-sm text-coal-300 dark:text-gray-300 overflow-x-auto">
+              <pre className="text-sm text-coal-100 dark:text-gray-300 overflow-x-auto">
                 {`import { inherit } from './inherit.js';
 import { Piece } from './piece.js';
 import { Slideable } from './slideable.js';
@@ -412,7 +397,7 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
               </pre>
             </div>
 
-            <p className="text-coal-300 dark:text-gray-300 mt-2">
+            <p className="mt-2">
               This approach allowed for efficient code reuse while maintaining
               the unique movement patterns of each chess piece. The Slideable
               composition pattern was particularly effective for handling the
@@ -428,10 +413,10 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
 
         <div className="space-y-8">
           <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-500 dark:text-gray-200">
               Game Interface
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               The chess board interface features intuitive drag-and-drop
               functionality, move highlighting, and responsive design that works
               seamlessly across devices.
@@ -448,10 +433,10 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
           </div>
 
           <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-500 dark:text-gray-200">
               Move Validation
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               The custom move validation system highlights legal moves, prevents
               illegal actions, and handles special chess rules like castling and
               en passant captures.
@@ -468,10 +453,10 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
           </div>
 
           <div className="bg-coal-800/20 dark:bg-gray-800/20 p-6 rounded-lg space-y-4">
-            <h3 className="text-xl font-semibold text-coal-200 dark:text-gray-200">
+            <h3 className="text-xl font-semibold text-coal-500 dark:text-gray-200">
               Mobile Experience
             </h3>
-            <p className="text-coal-300 dark:text-gray-300">
+            <p className="">
               The responsive design adapts to mobile screens, maintaining full
               functionality while optimizing the interface for touch
               interactions.
@@ -490,9 +475,9 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
       </section> */}
 
       {/* Development Insights */}
-      <section className="space-y-4">
+      <section className="space-y-4 ">
         <h2>Development Insights</h2>
-        <div className="prose prose-sm max-w-none text-coal-300 dark:text-gray-300">
+        <div className="prose prose-sm max-w-none dark:text-coal-100">
           <p>
             Building NextChess provided valuable experience in both frontend and
             game development. Key learnings included:
@@ -525,7 +510,7 @@ Queen.prototype.pieceMoves = function(pos = this.getPos()) {
       {/* Future Enhancements */}
       <section className="space-y-4">
         <h2>Future Enhancements</h2>
-        <div className="prose prose-sm max-w-none text-coal-300 dark:text-gray-300">
+        <div className="prose prose-sm max-w-none dark:text-coal-100">
           <p>
             While NextChess is fully functional, several enhancements are
             planned for future iterations:

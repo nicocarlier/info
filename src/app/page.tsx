@@ -34,28 +34,29 @@ export default function About() {
         </div>
 
         {/* About me */}
-        <div className="space-y-5">
+        <div className="space-y-5 ">
           <h2 className="space-x-3 text-3xl font-semibold font-display">
             <span className="wave inline-block animate-wave" aria-hidden="true">
               👋{' '}
             </span>
             <span>{"Hi, I'm Nico"}</span>
           </h2>
-          <p className="text-lg opacity-80">
-            Full-stack engineer at Inventive AI, where we're building AI agents
-            to automate sales tasks and RFP responses. I work with React,
-            Next.js, TypeScript, and Django developing knowledge systems and
-            collaboration tools.
+          <p className="">
+            Full-stack engineer at Inventive AI, where I build AI-powered
+            platforms to automate sales workflows and streamline RFP responses.
+            I specialize in React, Next.js, TypeScript, and Django, delivering
+            performant knowledge systems and real-time collaboration tools.
           </p>
-          <p className="opacity-60">
-            I began in mechanical engineering before transitioning to software
-            development. My focus has been on AI platforms, web applications,
-            and optimization tools. Based in the San Francisco Bay Area, I enjoy
-            solving complex technical challenges.
+          <p className="">
+            My journey started in mechanical engineering before transitioning to
+            software development. I’m passionate about creating AI-driven
+            products, optimizing complex systems, and architecting scalable web
+            applications. Based in the San Francisco Bay Area, I love tackling
+            technical challenges that push me to grow.
           </p>
-          <p className="opacity-60">
-            Outside of work, I hike Bay Area trails, play tennis and rugby, and
-            read books on tech and science, or sci-fi novels.
+          <p className="">
+            Outside of work, you’ll find me hiking Bay Area trails, playing
+            tennis and rugby, or diving into sci-fi and tech books.
           </p>
         </div>
       </section>
@@ -74,21 +75,65 @@ export default function About() {
               </p>
             </header>
             <div className="relative space-y-4 rounded shadow-sm backdrop-blur-sm">
-              <div>
-                <p className="text-2xl">Deep Expertise</p>
-                <p className="overflow-hidden text-sm opacity-80">
-                  This year I'm diving deeper into my core technologies rather
-                  than spreading wide. Focusing on mastering React performance
-                  optimization, TypeScript architecture patterns, and advanced
-                  state management techniques to build more robust, maintainable
-                  applications.
-                </p>
+              <div className="pl-2">
+                <p className="text-lg">{`->`} Work</p>
+                <div className="space-y-3 pl-2">
+                  <div className="flex space-x-3">
+                    <span aria-hidden="true">⚡️</span>
+                    <div>
+                      <p className="text-gray-900 dark:text-coal-100">
+                        Performance Optimization
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-coal-300">
+                        Master React performance, TypeScript patterns, and
+                        advanced state management for robust, scalable apps
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex space-x-3">
+                    <span aria-hidden="true">🚀</span>
+                    <div>
+                      <p className="text-gray-900 dark:text-coal-100">
+                        AI Integration
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-coal-300">
+                        Build smarter products by integrating AI/ML APIs and
+                        enhancing user experiences with async workflows
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex space-x-3">
+                    <span aria-hidden="true">🤝</span>
+                    <div>
+                      <p className="text-gray-900 dark:text-coal-100">
+                        Collaboration
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-coal-300">
+                        Level up teamwork and communication with
+                        cross-functional teams to deliver product features from
+                        0-to-1
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex space-x-3">
+                    <span aria-hidden="true">🛠️</span>
+                    <div>
+                      <p className="text-gray-900 dark:text-coal-100">
+                        Developer Velocity
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-coal-300">
+                        Optimize workflows and codebases with better testing,
+                        CI/CD, and deployment strategies
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="pt-3 border-t border-gray-200 dark:border-coal-700">
-                <p className="text-xl mb-2">Personal Goals</p>
+              <div className="pt-3 dark:border-coal-700">
+                <p className="text-lg mb-2">{`->`} Personal</p>
 
-                <div className="space-y-3">
+                <div className="space-y-3 pl-2">
                   <div className="flex space-x-3">
                     <span aria-hidden="true">🎾</span>
                     <div>
@@ -154,11 +199,6 @@ export default function About() {
                       <h3 className="font-medium text-coal-800 dark:text-coal-100">
                         {project.name}
                       </h3>
-                      {project.slug === 'chess-app' && (
-                        <span className="px-2 py-0.5 bg-blue-600 text-xs text-white rounded-full font-medium">
-                          In Progress
-                        </span>
-                      )}
                     </div>
                     <p className="text-sm text-coal-600 dark:text-coal-300 line-clamp-1">
                       {project.description}
@@ -174,8 +214,9 @@ export default function About() {
           {/* Life */}
           <article className="space-y-4 flex flex-col">
             <header className="space-y-1">
-              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-coal-100">
-                <span className="mr-2">🧬</span>Life
+              <h2 className="flex items-center space-x-3 text-xl font-semibold font-display">
+                <span aria-hidden="true">🧬</span>
+                <div>Life</div>
               </h2>
               <p className="opacity-60">Tracking my life data in real time</p>
             </header>
