@@ -10,7 +10,9 @@ export default function GoogleCalendarButton() {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button className="MenubarTrigger px-3 ">Request Meeting</button>
+        <button className="MenubarTrigger px-3 hover:text-gray-900 dark:hover:text-coal-100">
+          Request Meeting
+        </button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
