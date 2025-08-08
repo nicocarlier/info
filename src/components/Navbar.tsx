@@ -40,7 +40,7 @@ const Navbar = () => {
         </Menubar.Menu>
 
         <div className="flex items-center ml-auto space-x-4">
-          <GoogleCalendarButton />
+          {/* <GoogleCalendarButton /> */}
 
           <a
             href="https://github.com/nicocarlier"
