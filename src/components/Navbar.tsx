@@ -39,6 +39,15 @@ const Navbar = () => {
           </Link>
         </Menubar.Menu>
 
+        <Menubar.Menu>
+          <Link
+            href="/life"
+            className="MenubarTrigger px-3 hover:text-gray-900 dark:hover:text-coal-100"
+          >
+            Life
+          </Link>
+        </Menubar.Menu>
+
         <div className="flex items-center ml-auto space-x-4">
           {/* <GoogleCalendarButton /> */}
 

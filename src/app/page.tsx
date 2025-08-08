@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import Timeline from '../components/Timeline';
 import { HIGH_LEVEL_PROJECTS } from '@/constants/projects.conts';
 import {
   FAVORITE_BOOKS,
@@ -18,7 +17,7 @@ export default function About() {
   const { theme } = useTheme();
 
   return (
-    <main className="max-w-screen-md px-4 mx-auto space-y-16 md:px-0 pt-8">
+    <main className="max-w-screen-md px-4 mx-auto space-y-16 md:px-0 py-8">
       <section className="grid-cols-2 gap-16 sm:grid">
         {/* Portrait */}
         <div className="items-start justify-center sm:flex">
@@ -364,8 +363,6 @@ export default function About() {
           </article>
         </div>
       </section>
-
-      <Timeline />
     </main>
   );
 }
