@@ -5,15 +5,19 @@ import React, { useState, useEffect, useMemo } from 'react';
 // Birth date constant
 const BIRTH_DATE = new Date('December 26, 2000 14:00:00');
 
+interface AgeBreakdown {
+  years: number;
+  months: number;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
 const LiveAgeTracker = () => {
   // State for age
   const [nextBirthday, setNextBirthday] = useState('');
-  const [ageBreakdown, setAgeBreakdown] = useState({
-    years: 0,
-    months: 0,
-    days: 0,
-    hours: 0,
-  });
+  const [ageBreakdown, setAgeBreakdown] = useState<AgeBreakdown | null>(null);
 
   // Calculate age in real-time
   useEffect(() => {
@@ -28,8 +32,10 @@ const LiveAgeTracker = () => {
       const months = Math.floor((totalDays % 365.25) / 30.44);
       const days = Math.floor((totalDays % 365.25) % 30.44);
       const hours = totalHours % 24;
+      const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
 
-      setAgeBreakdown({ years, months, days, hours });
+      setAgeBreakdown({ years, months, days, hours, minutes, seconds });
 
       // Calculate months until next birthday
       const currentYear = now.getFullYear();
@@ -59,8 +65,9 @@ const LiveAgeTracker = () => {
       <span aria-hidden="true">🎂</span>
       <div>
         <p className="text-gray-900 dark:text-coal-100">
-          {ageBreakdown.years} years, {ageBreakdown.months} months,{' '}
-          {ageBreakdown.days} days, {ageBreakdown.hours} hours
+          {ageBreakdown?.years} years, {ageBreakdown?.months} months,{' '}
+          {ageBreakdown?.days} days, {ageBreakdown?.hours} hours,{' '}
+          {ageBreakdown?.minutes} minutes, {ageBreakdown?.seconds} seconds{' '}
         </p>
         <p className="text-sm text-gray-600 dark:text-coal-300">
           Next birthday {nextBirthday}
