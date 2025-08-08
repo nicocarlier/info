@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import * as Menubar from '@radix-ui/react-menubar';
 import { FiSun, FiMoon, FiExternalLink } from 'react-icons/fi';
 import { useTheme } from '../app/context/ThemeContext';
@@ -17,33 +18,35 @@ const MoonIcon = () => (
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
+
+  const getNavLinkClass = (path: string) => {
+    const isActive =
+      pathname === path || (path !== '/' && pathname.startsWith(path));
+    return `MenubarTrigger px-3 hover:text-gray-900 dark:hover:text-coal-100 transition-all duration-200 ${
+      isActive
+        ? 'text-gray-900 dark:text-coal-100 border-b-2 border-gray-900 dark:border-white'
+        : 'text-gray-700 dark:text-coal-300'
+    }`;
+  };
 
   return (
     <Menubar.Root className="MenubarRoot flex justify-center border-b border-gray-200 dark:border-coal-800 bg-white/50 dark:bg-coal-900/50 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-screen-md w-full px-4 md:px-0 flex items-center h-14 text-gray-700 dark:text-coal-300 ">
         <Menubar.Menu>
-          <Link
-            href="/"
-            className="MenubarTrigger px-3 hover:text-gray-900 dark:hover:text-coal-100"
-          >
+          <Link href="/" className={getNavLinkClass('/')}>
             About
           </Link>
         </Menubar.Menu>
 
         <Menubar.Menu>
-          <Link
-            href="/projects"
-            className="MenubarTrigger px-3 hover:text-gray-900 dark:hover:text-coal-100"
-          >
+          <Link href="/projects" className={getNavLinkClass('/projects')}>
             Projects
           </Link>
         </Menubar.Menu>
 
         <Menubar.Menu>
-          <Link
-            href="/life"
-            className="MenubarTrigger px-3 hover:text-gray-900 dark:hover:text-coal-100"
-          >
+          <Link href="/life" className={getNavLinkClass('/life')}>
             Life
           </Link>
         </Menubar.Menu>

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
-import './globals.css';
-import 'react-vertical-timeline-component/style.min.css';
 import Navbar from '../components/Navbar';
 import { ThemeProvider } from './context/ThemeContext';
+import 'react-vertical-timeline-component/style.min.css';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -285,64 +285,6 @@ export default function FairbnbProject() {
         </div>
       </section>
 
-      {/* Technical Challenges */}
-      <section className="space-y-6">
-        <h2>Technical Challenges & Solutions</h2>
-
-        <div className="bg-coal-800/30 dark:bg-gray-800/30 p-6 rounded-lg space-y-4">
-          <h3 className="text-xl font-semibold ">
-            Date Handling Across Time Zones
-          </h3>
-          <p className="">
-            When handling booking dates between the frontend and backend,
-            timezone inconsistencies created significant challenges. Dates saved
-            in the database as{' '}
-            <code className="bg-coal-700/50 dark:bg-gray-700/50 px-1.5 py-0.5 rounded text-xs">
-              yyyy-mm-dd
-            </code>{' '}
-            strings would lose timezone data, causing potential date shifts when
-            displayed in the user's browser.
-          </p>
-
-          <div className="space-y-2">
-            <h4 className="font-medium">Solution: UTC Standardization</h4>
-            <p className="">
-              I implemented a bidirectional conversion system that standardizes
-              all dates to UTC before storage and converts them back to the
-              user's local timezone upon retrieval:
-            </p>
-
-            <div className="bg-coal-800 dark:bg-gray-900 p-4 rounded-md">
-              <pre className="text-sm text-coal-300 dark:text-gray-300 overflow-x-auto">
-                {`export const convertLocalDateToUTC = (inputDate) => {
-    const parts = inputDate.split("/");
-    const day = parseInt(parts[1], 10);
-    const month = parseInt(parts[0], 10);
-    const year = parseInt(parts[2], 10);
-    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const localDate = DateTime.fromObject({ day, month, year }).setZone(timeZone);
-    const utcDate = localDate.toUTC();
-    return utcDate.toFormat('dd/MM/yyyy');
-}
-
-export const UTCDateBooking = (booking) => {
-    return {...booking, 
-        startDate: convertLocalDateToUTC(booking.startDate), 
-        endDate: convertLocalDateToUTC(booking.endDate) 
-    }
-}`}
-              </pre>
-            </div>
-
-            <p className="mt-2">
-              This approach ensures consistent date handling regardless of user
-              location or timezone settings, maintaining data integrity
-              throughout the booking lifecycle.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Features without images */}
       {/* <section className="space-y-4">
         <h2>Features</h2>
