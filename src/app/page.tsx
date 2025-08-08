@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import Timeline from '../components/Timeline';
@@ -10,8 +12,11 @@ import {
 } from '@/constants/general.const';
 import LiveAgeTracker from '@/components/LiveAgeTracker';
 import LiveLocalTimeTracker from '@/components/LiveLocalTimeTracker';
+import { useTheme } from './context/ThemeContext';
 
 export default function About() {
+  const { theme } = useTheme();
+
   return (
     <main className="max-w-screen-md px-4 mx-auto space-y-16 md:px-0 pt-8">
       <section className="grid-cols-2 gap-16 sm:grid">
@@ -259,6 +264,29 @@ export default function About() {
                       </p>
                     ))}
                   </div>
+                </div>
+              </div>
+
+              {/* LinkedIn Profile */}
+              <div className="space-y-2 ">
+                <div className="flex space-x-3 ">
+                  <span aria-hidden="true">💼</span>
+                  <p className="text-gray-900 dark:text-coal-100 ">
+                    Professional Profile
+                  </p>
+                </div>
+                <div
+                  className="badge-base LI-profile-badge bg-transparent"
+                  data-locale="en_US"
+                  data-size="medium"
+                  data-theme={theme === 'light' ? 'light' : 'dark'}
+                  data-type="VERTICAL"
+                  data-vanity="nicholas-carlier"
+                  data-version="v1"
+                >
+                  {/* <a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/nicholas-carlier?trk=profile-badge">
+                    Nicholas Carlier
+                  </a> */}
                 </div>
               </div>
             </div>

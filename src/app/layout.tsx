@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import 'react-vertical-timeline-component/style.min.css';
 import Navbar from '../components/Navbar';
@@ -19,6 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          src="https://platform.linkedin.com/badges/js/profile.js"
+          async
+          defer
+          type="text/javascript"
+        />
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider>
           <Navbar />
