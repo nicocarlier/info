@@ -21,7 +21,7 @@
       let i = a(8229),
         t = a(8883),
         n = a(3063),
-        l = i._(a(7470));
+        l = i._(a(1193));
       function c(e) {
         let { props: s } = (0, t.getImgProps)(e, {
           defaultLoader: l.default,
@@ -29,7 +29,7 @@
             deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
             imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
             path: '/info/_next/image/',
-            loader: 'custom',
+            loader: 'default',
             dangerouslyAllowSVG: !1,
             unoptimized: !0,
           },
@@ -44,18 +44,6 @@
       a.d(s, { default: () => t.a });
       var i = a(1469),
         t = a.n(i);
-    },
-    7470: (e, s, a) => {
-      'use strict';
-      function i(e) {
-        let { src: s, width: a, quality: i } = e;
-        if (!s.startsWith('/info/')) {
-          let e = s.startsWith('/') ? s.slice(1) : s;
-          return '/info/'.concat(e);
-        }
-        return s;
-      }
-      a.r(s), a.d(s, { default: () => i });
     },
     8983: (e, s, a) => {
       'use strict';

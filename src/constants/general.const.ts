@@ -1,38 +1,42 @@
+const getImagePath = (path: string) => {
+  return process.env.NODE_ENV === 'production' ? `/info${path}` : path;
+};
+
 export const FAVORITE_BOOKS = [
   {
     title: 'Rework',
     authors: 'David Heinemeier Hansson & Jason Fried',
     cover: '📚',
     category: 'Business',
-    coverImage: '/books/rework.jpeg',
+    coverImage: getImagePath('/books/rework.jpeg'),
   },
   {
     title: 'Deep Work',
     authors: 'Cal Newport',
     cover: '🧠',
     category: 'Productivity',
-    coverImage: '/books/deep-work.jpeg',
+    coverImage: getImagePath('/books/deep-work.jpeg'),
   },
   {
     title: "Ender's Game",
     authors: 'Orson Scott Card',
     cover: '🚀',
     category: 'Science Fiction',
-    coverImage: '/books/enders-game.jpeg',
+    coverImage: getImagePath('/books/enders-game.jpeg'),
   },
   {
     title: 'Zero to One',
     authors: 'Peter Thiel',
     cover: '💡',
     category: 'Business',
-    coverImage: '/books/zero-to-one.png',
+    coverImage: getImagePath('/books/zero-to-one.png'),
   },
   {
     title: 'The Complacent Class',
     authors: 'Tyler Cowen',
     cover: '📊',
     category: 'Economics',
-    coverImage: '/books/the-complacent-class.jpeg',
+    coverImage: getImagePath('/books/the-complacent-class.jpeg'),
   },
   //   {
   //     title: "Holes",
@@ -53,20 +57,20 @@ export const FAVORITE_BOOKS = [
     authors: 'J. D. Salinger',
     cover: '🌾',
     category: 'Fiction',
-    coverImage: '/books/the-catcher-in-the-rye.jpeg',
+    coverImage: getImagePath('/books/the-catcher-in-the-rye.jpeg'),
   },
   {
     title: 'Sapiens',
     authors: 'Yuval Noah Harari',
     category: 'History',
-    coverImage: '/books/sapiens.jpeg',
+    coverImage: getImagePath('/books/sapiens.jpeg'),
   },
   {
     title: 'The Magic of Reality',
     authors: 'Richard Dawkins',
     cover: '🔮',
     category: 'Science',
-    coverImage: '/books/magic-of-reality.jpeg',
+    coverImage: getImagePath('/books/magic-of-reality.jpeg'),
   },
 ];
 
@@ -75,7 +79,7 @@ export const CURRENTLY_READING = [
     title: 'Superintelligence',
     authors: 'Nick Bostrom',
     subtitle: 'Paths, Dangers, Strategies',
-    coverImage: '/books/superintellegence.jpeg',
+    coverImage: getImagePath('/books/superintellegence.jpeg'),
   },
 ];
 

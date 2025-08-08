@@ -16,17 +16,17 @@
           },
         });
       let i = a(8229),
-        t = a(8883),
-        n = a(3063),
-        l = i._(a(7470));
+        n = a(8883),
+        t = a(3063),
+        l = i._(a(1193));
       function r(e) {
-        let { props: s } = (0, t.getImgProps)(e, {
+        let { props: s } = (0, n.getImgProps)(e, {
           defaultLoader: l.default,
           imgConf: {
             deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
             imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
             path: '/info/_next/image/',
-            loader: 'custom',
+            loader: 'default',
             dangerouslyAllowSVG: !1,
             unoptimized: !0,
           },
@@ -34,7 +34,7 @@
         for (let [e, a] of Object.entries(s)) void 0 === a && delete s[e];
         return { props: s };
       }
-      let c = n.Image;
+      let c = t.Image;
     },
     3878: (e, s, a) => {
       Promise.resolve().then(a.bind(a, 6193));
@@ -43,10 +43,10 @@
       'use strict';
       a.r(s), a.d(s, { default: () => l });
       var i = a(5155),
-        t = a(2115),
-        n = a(6766);
+        n = a(2115),
+        t = a(6766);
       function l() {
-        let [e, s] = (0, t.useState)(0),
+        let [e, s] = (0, n.useState)(0),
           a = [
             '/projects/fairbnb/fairbnb-square.webp',
             '/projects/fairbnb-map.webp',
@@ -107,7 +107,7 @@
                     (0, i.jsx)('div', {
                       className:
                         'relative h-full flex items-center justify-center',
-                      children: (0, i.jsx)(n.default, {
+                      children: (0, i.jsx)(t.default, {
                         priority: !0,
                         alt: 'Fairbnb dashboard',
                         src: a[e],
@@ -120,19 +120,19 @@
                     (0, i.jsx)('div', {
                       className:
                         'absolute bottom-4 left-0 right-0 flex justify-center space-x-2',
-                      children: a.map((a, t) =>
+                      children: a.map((a, n) =>
                         (0, i.jsx)(
                           'button',
                           {
                             className: 'w-3 h-3 rounded-full '.concat(
-                              e === t
+                              e === n
                                 ? 'bg-blue-600'
                                 : 'bg-gray-400 hover:bg-gray-300'
                             ),
-                            onClick: () => s(t),
-                            'aria-label': 'View image '.concat(t + 1),
+                            onClick: () => s(n),
+                            'aria-label': 'View image '.concat(n + 1),
                           },
-                          t
+                          n
                         )
                       ),
                     }),
@@ -547,21 +547,9 @@
     },
     6766: (e, s, a) => {
       'use strict';
-      a.d(s, { default: () => t.a });
+      a.d(s, { default: () => n.a });
       var i = a(1469),
-        t = a.n(i);
-    },
-    7470: (e, s, a) => {
-      'use strict';
-      function i(e) {
-        let { src: s, width: a, quality: i } = e;
-        if (!s.startsWith('/info/')) {
-          let e = s.startsWith('/') ? s.slice(1) : s;
-          return '/info/'.concat(e);
-        }
-        return s;
-      }
-      a.r(s), a.d(s, { default: () => i });
+        n = a.n(i);
     },
   },
   (e) => {

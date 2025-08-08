@@ -18,7 +18,7 @@
       let s = t(8229),
         r = t(8883),
         i = t(3063),
-        l = s._(t(7470));
+        l = s._(t(1193));
       function n(e) {
         let { props: a } = (0, r.getImgProps)(e, {
           defaultLoader: l.default,
@@ -26,7 +26,7 @@
             deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
             imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
             path: '/info/_next/image/',
-            loader: 'custom',
+            loader: 'default',
             dangerouslyAllowSVG: !1,
             unoptimized: !0,
           },
@@ -235,24 +235,12 @@
       var s = t(1469),
         r = t.n(s);
     },
-    7470: (e, a, t) => {
-      'use strict';
-      function s(e) {
-        let { src: a, width: t, quality: s } = e;
-        if (!a.startsWith('/info/')) {
-          let e = a.startsWith('/') ? a.slice(1) : a;
-          return '/info/'.concat(e);
-        }
-        return a;
-      }
-      t.r(a), t.d(a, { default: () => s });
-    },
     7699: (e, a, t) => {
       Promise.resolve().then(t.bind(t, 8511));
     },
     8511: (e, a, t) => {
       'use strict';
-      t.r(a), t.d(a, { default: () => j });
+      t.r(a), t.d(a, { default: () => f });
       var s = t(5155),
         r = t(6874),
         i = t.n(r),
@@ -303,64 +291,66 @@
             thumbnail: '\uD83D\uDCAA',
           },
         ],
-        c = [
+        c = (e) => '/info'.concat(e),
+        o = [
           {
             title: 'Rework',
             authors: 'David Heinemeier Hansson & Jason Fried',
             cover: '\uD83D\uDCDA',
             category: 'Business',
-            coverImage: '/books/rework.jpeg',
+            coverImage: c('/books/rework.jpeg'),
           },
           {
             title: 'Deep Work',
             authors: 'Cal Newport',
             cover: '\uD83E\uDDE0',
             category: 'Productivity',
-            coverImage: '/books/deep-work.jpeg',
+            coverImage: c('/books/deep-work.jpeg'),
           },
           {
             title: "Ender's Game",
             authors: 'Orson Scott Card',
             cover: '\uD83D\uDE80',
             category: 'Science Fiction',
-            coverImage: '/books/enders-game.jpeg',
+            coverImage: c('/books/enders-game.jpeg'),
           },
           {
             title: 'Zero to One',
             authors: 'Peter Thiel',
             cover: '\uD83D\uDCA1',
             category: 'Business',
-            coverImage: '/books/zero-to-one.png',
+            coverImage: c('/books/zero-to-one.png'),
           },
           {
             title: 'The Complacent Class',
             authors: 'Tyler Cowen',
             cover: '\uD83D\uDCCA',
             category: 'Economics',
-            coverImage: '/books/the-complacent-class.jpeg',
+            coverImage: c('/books/the-complacent-class.jpeg'),
           },
           {
             title: 'The Catcher in the Rye',
             authors: 'J. D. Salinger',
             cover: '\uD83C\uDF3E',
             category: 'Fiction',
-            coverImage: '/books/the-catcher-in-the-rye.jpeg',
+            coverImage: c('/books/the-catcher-in-the-rye.jpeg'),
           },
           {
             title: 'Sapiens',
             authors: 'Yuval Noah Harari',
             category: 'History',
-            coverImage: '/books/sapiens.jpeg',
+            coverImage: c('/books/sapiens.jpeg'),
           },
           {
             title: 'The Magic of Reality',
             authors: 'Richard Dawkins',
             cover: '\uD83D\uDD2E',
             category: 'Science',
-            coverImage: '/books/magic-of-reality.jpeg',
+            coverImage: c('/books/magic-of-reality.jpeg'),
           },
-        ],
-        o = [
+        ];
+      c('/books/superintellegence.jpeg');
+      let d = [
           {
             date: '26 Dec',
             location: 'Bali, Indonesia',
@@ -377,7 +367,7 @@
             flag: '\uD83C\uDDF3\uD83C\uDDFF',
           },
         ],
-        d = [
+        m = [
           { name: 'Tennis', emoji: '\uD83C\uDFBE' },
           { name: 'Hockey', emoji: '\uD83C\uDFD1' },
           { name: 'Rock Climbing', emoji: '\uD83E\uDDD7‍♂️' },
@@ -386,16 +376,16 @@
           { name: 'Chess', emoji: '♟️' },
           { name: 'Gym', emoji: '\uD83C\uDFCB️‍♂️' },
         ];
-      var m = t(2115);
-      let x = new Date('December 26, 2000 14:00:00'),
-        h = () => {
-          let [e, a] = (0, m.useState)(''),
-            [t, r] = (0, m.useState)(null);
+      var x = t(2115);
+      let h = new Date('December 26, 2000 14:00:00'),
+        p = () => {
+          let [e, a] = (0, x.useState)(''),
+            [t, r] = (0, x.useState)(null);
           return (
-            (0, m.useEffect)(() => {
+            (0, x.useEffect)(() => {
               let e = () => {
                 let e = new Date(),
-                  t = e.getTime() - x.getTime(),
+                  t = e.getTime() - h.getTime(),
                   s = Math.floor(t / 36e5),
                   i = Math.floor(t / 864e5),
                   l = Math.floor(i / 365.25),
@@ -409,7 +399,7 @@
                   seconds: Math.floor((t % 6e4) / 1e3),
                 });
                 let c = e.getFullYear(),
-                  o = new Date(x);
+                  o = new Date(h);
                 o.setFullYear(c), e > o && o.setFullYear(c + 1);
                 let d = Math.round((o.getTime() - e.getTime()) / 2630016e3);
                 a('in '.concat(d, ' months'));
@@ -439,6 +429,7 @@
                         ' days, ',
                         null == t ? void 0 : t.hours,
                         ' hours,',
+                        ' ',
                         null == t ? void 0 : t.minutes,
                         ' minutes, ',
                         null == t ? void 0 : t.seconds,
@@ -456,11 +447,11 @@
             })
           );
         };
-      var p = t(351);
-      let u = () => {
-        let [e, a] = (0, m.useState)('');
+      var u = t(351);
+      let g = () => {
+        let [e, a] = (0, x.useState)('');
         return (
-          (0, m.useEffect)(() => {
+          (0, x.useEffect)(() => {
             let e = () => {
               a(new Date().toLocaleTimeString('en-US'));
             };
@@ -472,7 +463,7 @@
             className:
               'flex items-center space-x-2 text-gray-700 dark:text-gray-300',
             children: [
-              (0, s.jsx)(p.Ohp, { className: 'w-4 h-4' }),
+              (0, s.jsx)(u.Ohp, { className: 'w-4 h-4' }),
               (0, s.jsxs)('div', {
                 className: 'flex items-center space-x-2',
                 children: [
@@ -490,9 +481,9 @@
           })
         );
       };
-      var g = t(3125);
-      function j() {
-        let { theme: e } = (0, g.D)();
+      var j = t(3125);
+      function f() {
+        let { theme: e } = (0, j.D)();
         return (0, s.jsxs)('main', {
           className: 'max-w-screen-md px-4 mx-auto space-y-16 md:px-0 py-8',
           children: [
@@ -506,7 +497,7 @@
                       (0, s.jsx)(l.default, {
                         priority: !0,
                         alt: 'Portrait photo of Nico',
-                        src: '/portrait.webp',
+                        src: ''.concat('/info', '/portrait.webp'),
                         className:
                           'object-contain object-bottom w-full rounded-xl shadow',
                         width: 1067,
@@ -894,8 +885,8 @@
                           className:
                             'p-4 rounded shadow-sm backdrop-blur-sm sm:flex sm:flex-col sm:justify-between space-y-4',
                           children: [
-                            (0, s.jsx)(h, {}),
-                            (0, s.jsx)(u, {}),
+                            (0, s.jsx)(p, {}),
+                            (0, s.jsx)(g, {}),
                             (0, s.jsxs)('div', {
                               className: 'flex space-x-3',
                               children: [
@@ -913,7 +904,7 @@
                                     (0, s.jsx)('p', {
                                       className:
                                         'text-sm text-gray-600 dark:text-coal-300',
-                                      children: d
+                                      children: m
                                         .map((e) =>
                                           ''.concat(e.emoji, ' ').concat(e.name)
                                         )
@@ -940,7 +931,7 @@
                                     }),
                                     (0, s.jsx)('div', {
                                       className: 'space-y-1.5',
-                                      children: o.map((e) =>
+                                      children: d.map((e) =>
                                         (0, s.jsxs)(
                                           'p',
                                           {
@@ -1025,7 +1016,7 @@
                         (0, s.jsx)('div', {
                           className:
                             'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4',
-                          children: c.map((e) =>
+                          children: o.map((e) =>
                             (0, s.jsxs)(
                               'div',
                               {

@@ -25,7 +25,7 @@ export default function About() {
             <Image
               priority
               alt="Portrait photo of Nico"
-              src="/portrait.webp"
+              src={`${process.env.NODE_ENV === 'production' ? '/info' : ''}/portrait.webp`}
               className="object-contain object-bottom w-full rounded-xl shadow"
               width={1067}
               height={1317}
